@@ -47,7 +47,7 @@ as a structural consequence of the Seeley--DeWitt expansion.
 
 ## Status
 
-Draft (in preparation).
+Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859)
 
 ## Position in the Programme
 
