@@ -47,7 +47,7 @@ as a structural consequence of the Seeley--DeWitt expansion.
 
 ## Status
 
-Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859)
+Preprint. DOI: [10.5281/zenodo.20262079](https://doi.org/10.5281/zenodo.20262079)
 
 ## Position in the Programme
 
@@ -55,8 +55,8 @@ Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859
   Q12 (Yang--Mills from $a_4$, admissible principal bundle),
   Q6a (gauge group $G_\Pi$), Q11 (effective Lorentzian metric),
   born-infeld-paper ($c_\chi$ structural bound)
-- **Inherited conditionality**: SU(3) sector conditional on [H-color]
-  (confirmed numerically in O32 for $q \in \{61, 151, 211\}$; analytical proof open)
+- **SU(3) status**: unconditional at the effective level — $[H\text{-color}]_{\mathrm{eff}}$
+  proved analytically in O31/O32
 
 ## Compilation
 
