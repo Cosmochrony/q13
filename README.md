@@ -22,7 +22,7 @@ the hierarchy ratio
 \]
 as a quantitative structural prediction. We then complete the gauge sector with the
 admissible Born--Infeld extension, which bounds gauge field strengths by the structural
-constant $c_{\mathrm{BI}}$ in direct analogy with the Born--Infeld completion of the gravitational
+constant $c_\chi$ in direct analogy with the Born--Infeld completion of the gravitational
 sector.
 
 **Central message**: $S_\Pi[g,\mathcal{A}]$ unifies gravity and gauge dynamics in a single
@@ -54,7 +54,7 @@ Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859
 - **Depends on**: Gravity paper ($S_\Pi[g]$ functional, $a_2$ Einstein result),
   Q12 (Yang--Mills from $a_4$, admissible principal bundle),
   Q6a (gauge group $G_\Pi$), Q11 (effective Lorentzian metric),
-  born-infeld-paper ($c_{\mathrm{BI}}$ structural bound)
+  born-infeld-paper ($c_\chi$ structural bound)
 - **SU(3) status**: unconditional at the effective level — $[H\text{-color}]_{\mathrm{eff}}$
   proved analytically in O31/O32
 
