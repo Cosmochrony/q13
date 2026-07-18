@@ -1,5 +1,9 @@
 \documentclass[12pt,a4paper]{article}
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{hyperref}
 \usepackage{natbib}
@@ -7,6 +11,7 @@
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{doi}
 
 \geometry{margin=2.5cm}
@@ -23,12 +28,20 @@
   colorlinks=true,
   linkcolor=blue,
   citecolor=blue,
-  urlcolor=blue
+  urlcolor=blue,
+  pdftitle={Gauge--Gravity Spectral Synthesis: A Conditional Einstein--Yang--Mills System from
+    Projective Spectral Entropy},
+  pdfauthor={Jérôme Beau},
+  pdfsubject={Joint metric and connection variation of a common renormalized local action, with
+    matched couplings as independent renormalization data},
+  pdfkeywords={gauge--gravity synthesis, Einstein--Yang--Mills equations, Seeley--DeWitt expansion,
+    spectral entropy functional, Yang--Mills stress tensor, renormalization matching,
+    non-injective projection, admissible bundle}
 }
 
 \title{Gauge--Gravity Spectral Synthesis:\\
-Joint Einstein--Yang--Mills Equations, Born--Infeld Completion,\\
-and the Hierarchy Ratio from Projective Spectral Entropy}
+A Conditional Einstein--Yang--Mills System\\
+from Projective Spectral Entropy}
 
 \author{J.\ Beau\\
 \small Independent Researcher, France\\
@@ -41,53 +54,41 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
   \maketitle
 
   \begin{abstract}
-    The companion papers Gravity~3.0~\cite{Beau2026h} and Q12~\cite{Beau2026q12}
-    derived, respectively, the Einstein tensor as the horizontal $a_2$ response
-    and the Yang--Mills equations as the vertical $a_4$ response of the projective
-    spectral entropy functional $S_\Pi[g,A] = \tfrac{1}{2}\log\det' \mathcal{A}_{g,A}$.
-    The present paper carries out the gauge--gravity synthesis and establishes its
-    central conceptual consequence: \emph{gravity and gauge dynamics are not unified
-    by enlarging the symmetry group or adding fields, but are stratified by the
-    Seeley--DeWitt level at which the same admissible operator responds to variation.}
-    The conventional question ``what symmetry unifies gravity and gauge?'' is thereby
-    replaced by ``at what spectral order does the projection respond?''
-
-    We solve the \emph{joint} variational problem $\delta_{g,A}S_\Pi = 0$ and
-    derive the coupled Einstein--Yang--Mills system: the Yang--Mills stress tensor
-    sources gravity through the metric dependence of the $a_4$ coefficient, with
-    coupling constant $8\pi G_N = c_{YM}/c_{EH}$ fixed by the Seeley--DeWitt expansion
-    alone.
-    We compute the $a_6$ coefficient and identify the leading gauge--gravity
-    cross-coupling $R_{\mu\nu\rho\sigma}F^{\mu\nu}F^{\rho\sigma}$.
-    The Eddington--Born--Infeld completion of the joint functional is constructed
-    from the same Born--Infeld saturation bound that governs the gravitational
-    sector~\cite{Beau2026c}.
-    The gauge--gravity hierarchy is a structural output of the spectral stratification:
-    gravity is induced at $a_2$ (quadratic UV divergence) and gauge at $a_4$
-    (logarithmic UV divergence), from the same cutoff $\ell_{\mathrm{sp}}$, giving:
-    \[
-      G_N g^2_{YM}
-      \;\sim\;
-      \frac{\ell_{\mathrm{sp}}^2}{\dim V}
-      \cdot\Bigl[\log\frac{\Lambda}{\mu}\Bigr]^{-1}
-      \;\ll\; 1,
-    \]
-    without fine-tuning.
-    The spectral stratification
-    $a_2 \to \text{gravity},\; a_4 \to \text{gauge},\; a_6 \to \text{mixed coupling}$
-    predicts that fermionic structure should appear at a dedicated spectral level
-    carrying a Dirac-type admissible operator, which is the central open question
-    for the continuation of the programme.
-    The gauge group $G_\Pi$ is inherited from the spectral admissibility
-    sub-programme~\cite{Beau2026q6a,Beau2026a35}; the $\mathrm{SU}(3)$ sector is unconditional:
-    $[H\text{-color}]_{\mathrm{eff}}$ (equality of capacity exponents) and
-    $[H\text{-color}]_{\mathrm{pointwise}}$ (exact equality at finite~$q$)
-    are both established analytically in~\cite{Beau2026a35,Beau2026a36}.
+    The companion Gravity and Q12 papers derived, respectively, the Einstein tensor as the
+    horizontal $a_2$ response and the local Yang--Mills equations as the vertical $a_4$ response
+    of the projective spectral entropy functional
+    $S_\Pi[g,A] = \tfrac{1}{2}\log\det' \mathcal{A}_{g,A}$.
+    The present paper joins the two variations within a single renormalized local action.
+    Its robust content is a \emph{conditional} Einstein--Yang--Mills system: varying the common
+    matched action with respect to the connection at fixed metric gives $D_\mu F^{a\mu\nu} = 0$,
+    while varying the same $\mathrm{tr}_\rho(F^2)$ term with respect to the metric gives exactly
+    the Yang--Mills stress tensor, through
+    $(1/\sqrt{g})\,\delta \!\int\!\sqrt{g}\,\mathrm{tr}_\rho(F^2)/\delta g^{\mu\nu}
+     = 2\tau_{\mu\nu}$ with
+    $\tau_{\mu\nu} = \mathrm{tr}_\rho(F_{\mu\rho}F_\nu{}^\rho - \tfrac14 g_{\mu\nu}F^2)$.
+    Once the two Wilson coefficients are matched canonically,
+    $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and $c_F = 1/(4g_{\mathrm{YM}}^2)$, the standard equation
+    $G_{\mu\nu} = 8\pi G_N T^{\mathrm{YM}}_{\mu\nu}$ is recovered \emph{by definition} of
+    $T^{\mathrm{YM}}$. Accordingly $c_{\mathrm{YM}}/c_{\mathrm{EH}}$ is not $8\pi G_N$ and is not
+    a prediction: $G_N$ and $g_{\mathrm{YM}}$ remain two independent renormalized matching data.
+    The cosmological $a_0$ term does contribute to the metric equation and is retained.
+    The $a_6$ sector is given only as a cautious inventory: in four dimensions it is not
+    logarithmically divergent, it contains $\Omega^3$ (not $\Omega^4$, which belongs to $a_8$)
+    together with several independent $R\,F^2$-type and derivative invariants, so no unique
+    cross-term is claimed and its Wilson coefficients are left explicitly conditional.
+    The Eddington--Born--Infeld section of the previous version is withdrawn: its determinant
+    construction was dimensionally and algebraically invalid, and no replacement is asserted here.
+    No numerical gauge--gravity hierarchy is claimed; what is structural is only the qualitative
+    difference in ultraviolet divergence degree, quadratic at $a_2$ and logarithmic at $a_4$.
+    The gauge group $G_\Pi$ is taken as input from the spectral admissibility sub-programme.
+    \emph{Interpretive status.} The reading of gravity and gauge dynamics as \emph{stratified by
+    Seeley--DeWitt order} rather than unified by an enlarged symmetry group is offered as an
+    interpretive outlook, not a theorem.
   \end{abstract}
 
   \textbf{Keywords:} gauge--gravity synthesis, Einstein--Yang--Mills equations,
-  Seeley--DeWitt expansion, spectral entropy functional, Eddington--Born--Infeld
-  completion, gauge--gravity hierarchy, non-injective projection, admissible bundle.
+  Seeley--DeWitt expansion, spectral entropy functional, Yang--Mills stress tensor,
+  renormalization matching, non-injective projection, admissible bundle.
 
   \tableofcontents
 
@@ -129,41 +130,44 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
     \subsection{Main results}
       \label{ssec:main}
 
-      The present paper delivers the four items deferred from Q12~\cite{Beau2026q12}:
+      The present paper delivers the following, and explicitly withdraws two claims made in
+      earlier versions:
 
       \begin{enumerate}
-        \item \textbf{Joint variational problem.}
-        We solve $\delta_{g,A}S_\Pi = 0$ as a coupled system and show that the
-        Yang--Mills stress tensor $T^{\mathrm{YM}}_{\mu\nu}$ enters the metric equation
-        as the unique source term produced by the $a_4$ coefficient under metric variation
-        (Theorem~\ref{thm:EYM}).
+        \item \textbf{Conditional joint variational problem.}
+        We vary a single renormalized local action with respect to both $g$ and $A$ and obtain
+        the coupled Einstein--Yang--Mills system, with the Yang--Mills stress tensor arising from
+        the metric dependence of the matched $\mathrm{tr}_\rho(F^2)$ term
+        (Theorem~\ref{thm:EYM}). The normalisation is fixed by canonical matching, not predicted:
+        $G_N$ and $g_{\mathrm{YM}}$ are independent renormalized data
+        (Remark~\ref{rem:no-prediction}).
 
-        \item \textbf{Gauge--gravity coupling at order $a_6$.}
-        We compute the leading cross-term in the $a_6$ Seeley--DeWitt coefficient,
-        which contains $R_{\mu\nu\rho\sigma} F^{\mu\nu} F^{\rho\sigma}$ and encodes
-        the gravitational backreaction of the gauge field at higher spectral order
-        (Theorem~\ref{thm:a6}).
+        \item \textbf{Cautious $a_6$ inventory.}
+        We list the independent gauge--gravity invariants that can occur at order $a_6$ and
+        record what is \emph{not} determined by the present analysis: in four dimensions $a_6$ is
+        not logarithmically divergent, and no unique cross-term is computed here
+        (Section~\ref{sec:a6}).
 
-        \item \textbf{Eddington--Born--Infeld completion.}
-        We construct the EBI extension of $S_\Pi[g,A]$ from the same saturation
-        bound $c_{\mathrm{BI}}$ that underlies the gravitational Born--Infeld completion
-        of~\cite{Beau2026c} (Theorem~\ref{thm:EBI}).
+        \item \textbf{Withdrawal of the Eddington--Born--Infeld theorem.}
+        The EBI construction of the previous version is withdrawn as dimensionally and
+        algebraically invalid; no replacement is asserted (Section~\ref{sec:EBI}).
 
-        \item \textbf{Quantitative hierarchy ratio.}
-        We derive a precise structural bound on $G_N g^2_{YM}$ and show that it
-        is structurally suppressed in both $\ell_{\mathrm{sp}}^2$ and $[\log(\Lambda/\mu)]^{-1}$, without fine-tuning
-        (Proposition~\ref{prop:hierarchy}).
+        \item \textbf{Withdrawal of the quantitative hierarchy.}
+        The numerical bound previously claimed for $G_N g^2_{YM}$ is withdrawn: both couplings
+        are matching data, so their ratio is not an output of the construction
+        (Section~\ref{sec:hierarchy}).
       \end{enumerate}
 
     \subsection{Organisation}
       \label{ssec:org}
 
-      Section~\ref{sec:joint} states the joint functional and recalls the
-      horizontal--vertical decoupling structure.
-      Section~\ref{sec:EYM} derives the Einstein--Yang--Mills system.
-      Section~\ref{sec:a6} computes the $a_6$ cross-coupling.
-      Section~\ref{sec:EBI} constructs the Eddington--Born--Infeld completion.
-      Section~\ref{sec:hierarchy} derives the hierarchy ratio quantitatively.
+      Section~\ref{sec:joint} states the joint functional and the fixed-metric variational
+      structure inherited from Q12.
+      Section~\ref{sec:EYM} derives the conditional Einstein--Yang--Mills system and its
+      matching normalisation.
+      Section~\ref{sec:a6} gives the cautious $a_6$ inventory.
+      Section~\ref{sec:EBI} records the withdrawal of the Eddington--Born--Infeld theorem.
+      Section~\ref{sec:hierarchy} records the withdrawal of the quantitative hierarchy.
       Section~\ref{sec:epistemic} discusses the epistemic status and analytical
       status of [H-color].
       Section~\ref{sec:conclusion} concludes.
@@ -192,17 +196,17 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
       \]
       where $E\in\Gamma(\mathrm{End}\,E)$ is the endomorphism determined by the admissibility
       structure.
-      By the horizontal--vertical decoupling lemma of Q12 (Lemma~1 of~\cite{Beau2026q12}),
-      the operator splits as:
-      \[
-        \mathcal{A}_{g,A} = \mathcal{A}_g^{\mathrm{hor}} \otimes \mathrm{Id}_V
-        \;+\;
-        \mathrm{Id}_{\mathcal{H}} \otimes \mathcal{A}_A^{\mathrm{vert}}
-        \;+\;
-        \mathcal{A}^{\mathrm{mix}},
-      \]
-      where $\mathcal{A}^{\mathrm{mix}}$ is suppressed at the spectral scale $\ell_{\mathrm{sp}}$
-      by minimal coupling.
+      Lemma~1 of Q12~\cite{Beau2026q12}, in its corrected form, states only that under minimal
+      coupling the coefficient $a_2$ is independent of $A$, so that the \emph{vertical} variation
+      at fixed metric isolates the Yang--Mills sector.
+      It does \emph{not} assert a full horizontal--vertical decoupling: the metric variation of
+      the $a_4$ gauge term is precisely the Yang--Mills stress tensor, an $a_4$-order
+      back-reaction which is the subject of Section~\ref{sec:EYM}.
+      Accordingly we do not use any operator split of the form
+      $\mathcal{A}_g^{\mathrm{hor}}\otimes\mathrm{Id}_V
+      + \mathrm{Id}_{\mathcal{H}}\otimes\mathcal{A}_A^{\mathrm{vert}}
+      + \mathcal{A}^{\mathrm{mix}}$; such a split was assumed in earlier versions of this paper
+      and is withdrawn.
       The spectral entropy functional is then:
       \[
         S_\Pi[g,A] = \tfrac{1}{2}\mathrm{Tr}\log\mathcal{A}_{g,A}
@@ -239,9 +243,15 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
         \label{eq:SDW-expansion}
       \end{align}
       where $S_\Pi^{\mathrm{fin}}$ is the finite part at the renormalization scale $\mu$.
-      The cosmological-constant sector $a_0$ does not contribute to the equations of motion
-      and is set aside.
-      The two dynamically active sectors are:
+      The $a_0$ sector is \emph{not} inert. With
+      $a_0 = \int_M \mathrm{tr}(\mathrm{Id}_V)\sqrt{g}\,d^4x$ and
+      $\delta\sqrt{g}/\delta g^{\mu\nu} = -\tfrac12\sqrt{g}\,g_{\mu\nu}$, it contributes a
+      cosmological term proportional to $g_{\mu\nu}$ in the metric equation.
+      (Earlier versions of this paper asserted that $a_0$ does not contribute to the equations of
+      motion; that assertion was incorrect and is withdrawn.)
+      Its renormalized coefficient is a further matching datum, written $\Lambda_{\mathrm{ren}}$
+      below, and is not predicted here.
+      The remaining sectors used in this paper are:
       \begin{align}
         a_2[g]
         &= \frac{1}{16\pi^2}\int_M \frac{R}{6}\,\mathrm{tr}(\mathrm{Id}_V)\,\sqrt{g}\,d^4x,
@@ -252,15 +262,18 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
         \Bigl[
           \alpha_1 R^2 + \alpha_2 R_{\mu\nu}R^{\mu\nu}
           + \alpha_3 R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
-          + \tfrac{1}{12}\mathrm{Tr}(\Omega^2_A)
+          + \tfrac{1}{12}\mathrm{tr}_\rho(F_{\mu\nu}F^{\mu\nu})
           \Bigr]\sqrt{g}\,d^4x,
         \label{eq:a4}
       \end{align}
-      where $\Omega_A^{\mu\nu} = F^a_{\mu\nu}\,T^a$ is the curvature two-form in the
-      representation $\rho$ and $\alpha_1,\alpha_2,\alpha_3$ are numerical coefficients
-      depending on the spectrum of $\mathcal{A}_g$~\cite{Vassilevich2003}.
-      The Yang--Mills term $\tfrac{1}{12}\mathrm{Tr}(\Omega^2_A)$ is the unique
-      $a_4$ contribution that is first-order in the curvature two-form.
+      where $\mathrm{tr}_\rho$ is the trace in the fibre representation $\rho$, the gauge
+      component $\Omega^{\mathrm{gauge}}_{\mu\nu} = F_{\mu\nu}$ has been isolated from the total
+      bundle curvature as in Q12~\cite{Beau2026q12} (the total $\Omega$ also carries the
+      spin-connection curvature, which feeds the purely gravitational invariants), and
+      $\alpha_1,\alpha_2,\alpha_3$ are numerical coefficients~\cite{Vassilevich2003}.
+      The term $\tfrac{1}{12}\mathrm{tr}_\rho(F^2)$ is the unique gauge-invariant $a_4$
+      contribution quadratic in the gauge curvature; its normalisation depends on the
+      representation through the Dynkin index $I_\rho$ and is therefore not universal.
 
   \section{Joint Einstein--Yang--Mills equations of motion}
     \label{sec:EYM}
@@ -268,453 +281,296 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
     \subsection{Metric variation of the joint functional}
       \label{ssec:metric-var}
 
-      The metric variation of $S_\Pi[g,A]$ receives contributions from all
-      Seeley--DeWitt coefficients that depend on $g$.
-      At leading infrared order, the dominant term is:
+      We work throughout with a single renormalized local action, in which each surviving
+      invariant carries its own Wilson coefficient fixed by matching:
       \begin{equation}
-        \frac{\delta S_\Pi}{\delta g^{\mu\nu}}
+        S^{\mathrm{ren}}[g,A]
         \;=\;
-        c_{EH}\,G_{\mu\nu}\sqrt{g}
-        \;+\;
-        c_{YM}\,\frac{\delta}{\delta g^{\mu\nu}}
-        \int_M \mathrm{Tr}(\Omega^2_A)\sqrt{g}\,d^4x
-        \;+\;
-        O(R^3,\,R\cdot F^4),
-        \label{eq:metric-var}
+        \int_M \Bigl[
+          -\,\Lambda_{\mathrm{ren}}
+          \;+\; c_{\mathrm{EH}}\,R
+          \;+\; c_F\,\mathrm{tr}_\rho(F_{\mu\nu}F^{\mu\nu})
+        \Bigr]\sqrt{g}\,d^4x
+        \;+\;\text{(higher orders)}.
+        \label{eq:ren-action}
       \end{equation}
-      where $c_{EH} = c_{(2)}\Lambda^2/(96\pi^2)$ and $c_{YM} = c_{(4)}\log(\Lambda/\mu)/(192\pi^2)$
-      are the induced coupling constants established in~\cite{Beau2026h} and~\cite{Beau2026q12} respectively.
+      The coefficients $\Lambda_{\mathrm{ren}}$, $c_{\mathrm{EH}}$ and $c_F$ are renormalized
+      matching data; the spectral expansion fixes the \emph{degree of divergence} of each, not
+      their finite values (Gravity~3.3.1~\cite{Beau2026h}, Q12~1.3~\cite{Beau2026q12}).
 
-      \begin{lemma}[Metric variation of the Yang--Mills term]
+      \begin{lemma}[Metric variation of the gauge kinetic term]
         \label{lem:YM-stress}
-        Let $\mathcal{L}_{YM} = -\tfrac{1}{4}\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})\sqrt{g}$.
-        Then:
+        With
+        \[
+          \tau_{\mu\nu}
+          \;\equiv\; \mathrm{tr}_\rho\!\left(F_{\mu\rho}F_\nu{}^\rho
+            - \tfrac14 g_{\mu\nu}F_{\rho\sigma}F^{\rho\sigma}\right),
+        \]
+        one has
         \[
           \frac{1}{\sqrt{g}}\frac{\delta}{\delta g^{\mu\nu}}
-          \int_M \mathrm{Tr}(\Omega^2_A)\sqrt{g}\,d^4x
+          \int_M \mathrm{tr}_\rho(F_{\rho\sigma}F^{\rho\sigma})\sqrt{g}\,d^4x
           \;=\;
-          -4\,\mathrm{Tr}(F_{\mu\rho}F_\nu{}^\rho)
-          \;+\;
-          g_{\mu\nu}\,\mathrm{Tr}(F_{\rho\sigma}F^{\rho\sigma})
-          \;\equiv\;
-          T^{YM}_{\mu\nu}.
+          2\,\tau_{\mu\nu}.
         \]
       \end{lemma}
 
       \begin{proof}
-        Standard variation of the Yang--Mills kinetic term with respect to the metric,
-        using $\partial_\alpha\sqrt{g} = \tfrac{1}{2}\sqrt{g}\,g^{\mu\nu}\partial_\alpha g_{\mu\nu}$
-        and the fact that $F_{\mu\nu}$ is metric-independent.
-        The result is the standard Yang--Mills energy-momentum tensor.
+        $F_{\mu\nu}$ with both indices down is metric-independent, so the metric enters only
+        through the two inverse metrics contracting the indices and through the volume element:
+        $\mathrm{tr}_\rho(F^2) = g^{\mu\rho}g^{\nu\sigma}\,\mathrm{tr}_\rho(F_{\mu\nu}F_{\rho\sigma})$.
+        Hence
+        $\delta\,\mathrm{tr}_\rho(F^2)/\delta g^{\mu\nu} = 2\,\mathrm{tr}_\rho(F_{\mu\rho}F_\nu{}^\rho)$
+        and $\delta\sqrt{g}/\delta g^{\mu\nu} = -\tfrac12\sqrt{g}\,g_{\mu\nu}$, so
+        \[
+          \frac{1}{\sqrt{g}}\frac{\delta}{\delta g^{\mu\nu}}
+          \bigl[\sqrt{g}\,\mathrm{tr}_\rho(F^2)\bigr]
+          = 2\,\mathrm{tr}_\rho(F_{\mu\rho}F_\nu{}^\rho)
+            - \tfrac12 g_{\mu\nu}\,\mathrm{tr}_\rho(F^2)
+          = 2\,\tau_{\mu\nu}. \qedhere
+        \]
       \end{proof}
+
+      \begin{remark}[Correction of the previous normalisation]
+        \label{rem:factor}
+        Earlier versions of this paper displayed
+        $-4\,\mathrm{Tr}(F_{\mu\rho}F_\nu{}^\rho) + g_{\mu\nu}\mathrm{Tr}(F^2)$
+        for this variation, i.e.\ $-2\tau_{\mu\nu}$. That expression was wrong by a factor
+        $-2$; the correct result is $2\tau_{\mu\nu}$ as above.
+      \end{remark}
 
     \subsection{Gauge-field variation}
       \label{ssec:gauge-var}
 
-      From Theorem~1 of Q12~\cite{Beau2026q12}, the variation of $S_\Pi[g,A]$ with
-      respect to the admissible connection $A$ yields:
+      Varying the matched action~\eqref{eq:ren-action} with respect to the admissible connection
+      $A$ \emph{at fixed metric}, as in Theorem~1 of Q12~\cite{Beau2026q12}, gives
       \[
-        \frac{\delta S_\Pi}{\delta A^a_\nu}
+        \frac{\delta S^{\mathrm{ren}}}{\delta A^a_\nu}
         \;=\;
-        c_{YM}\,D_\mu F^{a\mu\nu}\sqrt{g}
+        -\,4\,c_F\,I_\rho\,D_\mu F^{a\mu\nu}\sqrt{g}
         \;+\;
         O(F^3,\,R\cdot F),
       \]
-      where $D_\mu = \partial_\mu + [A_\mu,\,\cdot\,]$ is the gauge-covariant derivative.
-      The Yang--Mills equations $D_\mu F^{a\mu\nu} = 0$ follow at leading order.
+      where $D_\mu = \partial_\mu + [A_\mu,\,\cdot\,]$ is the gauge-covariant derivative and
+      $I_\rho$ is the Dynkin index of $\rho$.
+      Since the overall constant is non-zero, the source-free Yang--Mills equations
+      $D_\mu F^{a\mu\nu} = 0$ follow at leading order, independently of the value of $c_F$.
 
     \subsection{The joint system}
       \label{ssec:joint}
 
-      \begin{theorem}[Joint Einstein--Yang--Mills equations]
+      \begin{theorem}[Conditional Einstein--Yang--Mills system]
         \label{thm:EYM}
-        Let $S_\Pi[g,A] = \tfrac{1}{2}\log\det'\,\mathcal{A}_{g,A}$ be the joint
-        projective spectral entropy functional.
-        The joint variational problem $\delta_{g,A}S_\Pi = 0$, at leading order in
-        the Seeley--DeWitt expansion, is equivalent to:
+        Let $S^{\mathrm{ren}}[g,A]$ be the matched local action~\eqref{eq:ren-action}, and adopt
+        the stress-tensor convention
+        \[
+          T^{\mathrm{YM}}_{\mu\nu}
+          \;\equiv\; -\frac{2}{\sqrt{g}}\,
+          \frac{\delta}{\delta g^{\mu\nu}}
+          \int c_F\,\mathrm{tr}_\rho(F^2)\,\sqrt{g}\,d^4x
+          \;=\; -4c_F\,\tau_{\mu\nu}.
+        \]
+        Then joint stationarity $\delta_{g,A}S^{\mathrm{ren}} = 0$ is equivalent to
         \begin{align}
-          G_{\mu\nu}
-          &= 8\pi G_N\,T^{YM}_{\mu\nu},
+          G_{\mu\nu} + \Lambda_{\mathrm{eff}}\,g_{\mu\nu}
+          &= 8\pi G_N\,T^{\mathrm{YM}}_{\mu\nu},
           \label{eq:Einstein-YM}
           \\[4pt]
           D_\mu F^{a\mu\nu}
           &= 0,
           \label{eq:YM}
         \end{align}
-        where the coupling constant is defined by:
+        where, by the canonical matching conventions
         \[
-          8\pi G_N \;=\; \frac{c_{YM}}{c_{EH}}.
+          c_{\mathrm{EH}} \;=\; \frac{1}{16\pi G_N},
+          \qquad
+          c_F \;=\; \frac{1}{4g_{\mathrm{YM}}^2},
         \]
+        one has $8\pi G_N = 1/(2c_{\mathrm{EH}})$ and
+        $\Lambda_{\mathrm{eff}} = \Lambda_{\mathrm{ren}}/(2c_{\mathrm{EH}})$.
+        The system is \emph{conditional}: it holds given the matched coefficients, which are
+        renormalization data supplied from outside the expansion.
       \end{theorem}
 
       \begin{proof}
-        Setting $\delta_g S_\Pi = 0$ using~\eqref{eq:metric-var} and Lemma~\ref{lem:YM-stress}:
+        Vary~\eqref{eq:ren-action} term by term.
+        The Einstein--Hilbert term gives $c_{\mathrm{EH}}G_{\mu\nu}\sqrt{g}$;
+        the $a_0$ term gives $\tfrac12\Lambda_{\mathrm{ren}}g_{\mu\nu}\sqrt{g}$;
+        and by Lemma~\ref{lem:YM-stress} the gauge term gives
+        $2c_F\tau_{\mu\nu}\sqrt{g}$.
+        Stationarity therefore reads
         \[
-          c_{EH}\,G_{\mu\nu} + c_{YM}\,T^{YM}_{\mu\nu} = 0.
+          c_{\mathrm{EH}}\,G_{\mu\nu}
+          + \tfrac12\Lambda_{\mathrm{ren}}\,g_{\mu\nu}
+          + 2c_F\,\tau_{\mu\nu} \;=\; 0 .
         \]
-        The standard form~\eqref{eq:Einstein-YM} follows by identifying $8\pi G_N = c_{YM}/c_{EH}$.
-        Consistency with the explicit induced values established in~\cite{Beau2026h,Beau2026q12}:
-        \begin{equation}
-          G_N^{-1} \;=\; \frac{\dim V}{16\pi^2}\,\ell_{\mathrm{sp}}^{-2},
-          \qquad
-          g_{YM}^{-2} \;=\; \frac{1}{12\cdot 16\pi^2}\,\log\frac{\Lambda}{\mu},
-          \label{eq:induced-couplings}
-        \end{equation}
-        follows from $c_{EH} \propto \dim V\,\Lambda^2$ and $c_{YM} \propto \log(\Lambda/\mu)$
-        with $\Lambda \sim \ell_{\mathrm{sp}}^{-1}$:
-        the ratio $8\pi G_N = c_{YM}/c_{EH} \propto \ell_{\mathrm{sp}}^2\,\log(\Lambda/\mu)/\dim V$
-        grows with $\log\Lambda$ at fixed $\ell_{\mathrm{sp}}$, while $G_N^{-1} \sim \ell_{\mathrm{sp}}^{-2}$
-        is the dominant quadratic contribution.
-        In particular $G_N \sim \ell_{\mathrm{sp}}^2$ (not $\ell_{\mathrm{sp}}^{-2}$).
-        Equation~\eqref{eq:YM} is Theorem~1 of~\cite{Beau2026q12} and holds unchanged
-        since $\delta_A S_\Pi$ does not involve the $a_2$ sector.
+        Substituting $\tau_{\mu\nu} = -T^{\mathrm{YM}}_{\mu\nu}/(4c_F)$ and dividing by
+        $c_{\mathrm{EH}}$ gives
+        $G_{\mu\nu} + \Lambda_{\mathrm{ren}}g_{\mu\nu}/(2c_{\mathrm{EH}})
+         = T^{\mathrm{YM}}_{\mu\nu}/(2c_{\mathrm{EH}})$, which is~\eqref{eq:Einstein-YM}
+        under the stated matching.
+        Equation~\eqref{eq:YM} is the fixed-metric connection variation of
+        Section~\ref{ssec:gauge-var}.
       \end{proof}
 
-      \begin{remark}
-        The sign in~\eqref{eq:Einstein-YM} reflects the Euclidean signature convention
-        of the spectral derivation: the Yang--Mills energy density is positive, and the
-        Yang--Mills stress tensor acts as a positive source of curvature, as expected.
-        The coupling constant $8\pi G_N$ is \emph{not an input} but is determined by
-        the ratio of Seeley--DeWitt coefficients, both of which are fixed by the same
-        spectral cutoff $\ell_{\mathrm{sp}}$.
+      \begin{remark}[The normalisation is matching, not prediction]
+        \label{rem:no-prediction}
+        Equation~\eqref{eq:Einstein-YM} is recovered \emph{by definition} of
+        $T^{\mathrm{YM}}_{\mu\nu}$, whose normalisation already contains $g_{\mathrm{YM}}^{-2}$
+        through $c_F$. In particular
+        \[
+          8\pi G_N \;=\; \frac{1}{2c_{\mathrm{EH}}}
+          \qquad\text{and not}\qquad
+          8\pi G_N \;=\; \frac{c_{\mathrm{YM}}}{c_{\mathrm{EH}}},
+        \]
+        the latter identification --- asserted in earlier versions of this paper --- being
+        incorrect, since it mixes the gauge-action prefactor with the definition of the stress
+        tensor. Nothing in the construction predicts either constant: $G_N$ and
+        $g_{\mathrm{YM}}$ are two \emph{independent} renormalized matching data, in accordance
+        with Gravity~3.3.1~\cite{Beau2026h} and Q12~1.3~\cite{Beau2026q12}. The spectral
+        expansion fixes only the degree of ultraviolet divergence of each coefficient.
       \end{remark}
 
-  \section{Gauge--gravity coupling at order \texorpdfstring{$a_6$}{a6}}
+  \section{The \texorpdfstring{$a_6$}{a6} sector: a cautious inventory}
     \label{sec:a6}
 
-    \subsection{The \texorpdfstring{$a_6$}{a6} Seeley--DeWitt coefficient}
-      \label{ssec:a6-coeff}
+    \subsection{Divergence degree of \texorpdfstring{$a_6$}{a6} in four dimensions}
+      \label{ssec:a6-degree}
 
-      The $a_6$ coefficient of the operator $\mathcal{A}_{g,A}$ is a local integral
-      of terms of total derivative order six.
-      For a Laplace-type operator on a vector bundle with curvature endomorphism $E$
-      and connection curvature $\Omega_A$, the general form
-      is~\cite{Vassilevich2003,ParkerToms2009}:
+      In the normalisation of~\eqref{eq:heat-kernel}, $a_{2k}$ multiplies $t^{(2k-4)/2}$, so in
+      four dimensions $a_6$ carries $t^{+1}$.
+      It is therefore \emph{not} ultraviolet divergent: the logarithm sits at the $t^0$
+      coefficient $a_4$, while $a_6$ contributes a finite, inverse-cutoff-suppressed correction
+      of relative order $\ell_{\mathrm{sp}}^2$.
+      Earlier versions of this paper attached a factor $\log(\Lambda/\mu)$ to the $a_6$
+      corrections; that is incorrect and is withdrawn.
+
+    \subsection{Which invariants can occur}
+      \label{ssec:a6-inventory}
+
+      By dimension and derivative counting, $a_6$ collects local invariants of total derivative
+      order six~\cite{Vassilevich2003,ParkerToms2009}. Writing $\Omega^{\mathrm{gauge}} = F$ for
+      the gauge component of the bundle curvature, the terms that can appear include, besides the
+      purely gravitational cubic-curvature and $E$-dependent invariants:
       \begin{align}
-        a_6[\mathcal{A}_{g,A}]
-        &= \frac{1}{16\pi^2}\int_M
-        \Bigl[
-          \beta_1 R^3
-          + \beta_2 R\,R_{\mu\nu}R^{\mu\nu}
-          + \beta_3 R_{\mu\nu}{}^{\rho\sigma}R_{\rho\sigma}{}^{\alpha\beta}
-          R_{\alpha\beta}{}^{\mu\nu}
-          \nonumber\\[2pt]
-          &\qquad
-          + \gamma_1\,R_{\mu\nu\rho\sigma}\,\mathrm{Tr}(\Omega^{\mu\nu}_A\,\Omega^{\rho\sigma}_A)
-          + \gamma_2\,R\,\mathrm{Tr}(\Omega^2_A)
-          + \gamma_3\,\mathrm{Tr}(\Omega^4_A)
-          + \gamma_4\,\mathrm{Tr}((\nabla\Omega_A)^2)
-          \Bigr]\sqrt{g}\,d^4x,
-        \label{eq:a6}
+        &R\,\mathrm{tr}_\rho(F_{\mu\nu}F^{\mu\nu}),
+        \qquad
+        R_{\mu\nu}\,\mathrm{tr}_\rho(F^{\mu\rho}F^{\nu}{}_{\rho}),
+        \qquad
+        R_{\mu\nu\rho\sigma}\,\mathrm{tr}_\rho(F^{\mu\nu}F^{\rho\sigma}),
+        \nonumber\\[2pt]
+        &\mathrm{tr}_\rho(F_{\mu}{}^{\nu}F_{\nu}{}^{\rho}F_{\rho}{}^{\mu}),
+        \qquad
+        \mathrm{tr}_\rho(D_\mu F_{\nu\rho}\,D^\mu F^{\nu\rho}),
+        \qquad
+        \mathrm{tr}_\rho(D_\mu F^{\mu\nu}\,D^\rho F_{\rho\nu}),
+        \label{eq:a6-inventory}
       \end{align}
-      where $\beta_i$ and $\gamma_i$ are numerical coefficients computable from the
-      Seeley--DeWitt algorithm~\cite{Vassilevich2003}.
+      each with its own coefficient. Two corrections to the previous version are recorded:
+      \begin{enumerate}
+        \item The pure-gauge invariant at this order is \emph{cubic},
+        $\mathrm{tr}_\rho(F^3)$, not quartic. A term $\mathrm{tr}_\rho(\Omega^4)$ has derivative
+        order eight and belongs to $a_8$, not to $a_6$; its appearance in~$a_6$ in earlier
+        versions was an error.
+        \item There is no single ``leading cross-coupling''. The three mixed invariants
+        in~\eqref{eq:a6-inventory} are independent, and singling out
+        $R_{\mu\nu\rho\sigma}\mathrm{tr}_\rho(F^{\mu\nu}F^{\rho\sigma})$ as \emph{the}
+        cross-term is not justified by the present analysis.
+      \end{enumerate}
 
-    \subsection{The leading cross-coupling term}
-      \label{ssec:cross}
+    \subsection{What is not determined here}
+      \label{ssec:a6-open}
 
-      The dynamically significant cross-coupling between gravity and gauge at order $a_6$
-      is encoded in the $\gamma_1$ term:
-      \begin{equation}
-        \mathcal{L}^{(6)}_{\mathrm{cross}}
-        = \frac{\gamma_1}{16\pi^2}\,
-        R_{\mu\nu\rho\sigma}\,\mathrm{Tr}(F^{\mu\nu}\,F^{\rho\sigma})\,\sqrt{g}.
-        \label{eq:cross-coupling}
-      \end{equation}
-      This term couples the Riemann tensor directly to the gauge curvature two-form
-      and produces corrections to both the Einstein equation and the Yang--Mills equation:
+      We do \emph{not} compute the coefficients in~\eqref{eq:a6-inventory} for the admissible
+      operator: they are conditional Wilson coefficients, to be fixed either by an explicit
+      Seeley--DeWitt computation for $\mathcal{A}_{g,A}$ or by matching. Consequently no $a_6$
+      correction to the equations of motion is asserted in this paper.
 
-      \begin{theorem}[$a_6$ cross-coupling]
-        \label{thm:a6}
-        At order $a_6$, the joint equations of motion receive the corrections:
-        \begin{align}
-          G_{\mu\nu}
-          &= 8\pi G_N\,T^{YM}_{\mu\nu}
-          \;+\;
-          c_{(6)}\log\frac{\Lambda}{\mu}
-          \Bigl[
-            \nabla^\rho\nabla^\sigma\mathrm{Tr}(F_{\mu\rho}F_{\nu\sigma})
-            + \text{(curvature terms)}
-            \Bigr]
-          + O(a_8),
-          \label{eq:Einstein-YM-a6}
-          \\[4pt]
-          D_\mu F^{a\mu\nu}
-          &= c_{(6)}'\log\frac{\Lambda}{\mu}\,
-          [R^{\mu\nu\rho\sigma},F_{\rho\sigma}]^a
-          + O(F^3,\,R^2 F),
-          \label{eq:YM-a6}
-        \end{align}
-        where $c_{(6)}, c_{(6)}' > 0$ are scheme-dependent positive constants of order
-        $\ell_{\mathrm{sp}}^2/16\pi^2$.
-      \end{theorem}
-
-      \begin{proof}
-        The corrections follow from the variation of the $a_6$ term~\eqref{eq:a6}
-        with respect to $g^{\mu\nu}$ and $A^a_\nu$ respectively.
-        The metric variation of the $\gamma_1$ term uses the identity
-        \[
-          \frac{\delta}{\delta g^{\mu\nu}}
-          \int R_{\alpha\beta\rho\sigma}\,\mathrm{Tr}(F^{\alpha\beta}F^{\rho\sigma})\,\sqrt{g}\,d^4x
-          \ni
-          2\,\nabla^\alpha\nabla^\beta\mathrm{Tr}(F_{\mu\alpha}F_{\nu\beta})
-          + \text{(curvature contractions)},
-        \]
-        obtained by integration by parts of the Palatini variation.
-        The connection variation of the $\gamma_1$ term gives the commutator structure
-        in~\eqref{eq:YM-a6} through $\delta\Omega^{\mu\nu}_A = D^\mu(\delta A^\nu) - D^\nu(\delta A^\mu)$.
-        The constants $c_{(6)}, c_{(6)}'$ are suppressed by two additional powers of
-        $\ell_{\mathrm{sp}}$ relative to $c_{EH}$ and $c_{YM}$, confirming the
-        Seeley--DeWitt order counting.
-      \end{proof}
-
-      \begin{remark}
-        The corrections in Theorem~\ref{thm:a6} are suppressed by $\ell_{\mathrm{sp}}^2$
-        relative to the leading-order terms and are therefore negligible at scales
-        $\ell \gg \ell_{\mathrm{sp}}$.
-        At scales approaching $\ell_{\mathrm{sp}}$, the $a_6$ terms become comparable
-        to the Born--Infeld saturation corrections and the EBI completion of
-        Section~\ref{sec:EBI} provides the appropriate non-linear resummation.
+      \begin{remark}[An impossible commutator]
+        \label{rem:no-commutator}
+        Earlier versions displayed an $a_6$ correction to the Yang--Mills equation of the form
+        $[R^{\mu\nu\rho\sigma},F_{\rho\sigma}]$. This expression is identically zero and cannot
+        occur: the Riemann tensor is a scalar in the gauge algebra (it multiplies the identity on
+        the gauge factor of the bundle), so it commutes with every Lie-algebra-valued field.
+        A genuine mixed contribution to the connection equation takes instead the form
+        $\nabla_\mu\!\left(R^{\mu\nu\rho\sigma}F_{\rho\sigma}\right)$ and similar
+        curvature-weighted divergences, with coefficients not determined here.
       \end{remark}
 
-  \section{Eddington--Born--Infeld completion}
+  \section{Withdrawal of the Eddington--Born--Infeld construction}
     \label{sec:EBI}
 
-    \subsection{Motivation and strategy}
-      \label{ssec:EBI-motivation}
+    The previous version of this paper contained a gauge-sector Born--Infeld Lagrangian, a joint
+    Eddington--Born--Infeld functional, and a theorem asserting that the latter recovers the joint
+    equations at leading order and is bounded above.
+    That construction is \emph{withdrawn}. It fails on several independent counts, each fatal on
+    its own:
 
-      The induced gravity functional $c_{EH} a_2[g]$ diverges quadratically as
-      $\Lambda\to\infty$, and the induced gauge functional $c_{YM} a_4[g,A]$ diverges
-      logarithmically.
-      In both sectors, the Born--Infeld saturation bound $c_{\mathrm{BI}}$ of the admissibility
-      structure~\cite{Beau2026c} provides a natural non-linear completion that regulates
-      these divergences at the spectral length $\ell_{\mathrm{sp}}$.
-      The gravitational EBI completion was established in~\cite{Beau2026c,Beau2026h};
-      the present section constructs the gauge-sector completion and then assembles
-      the joint EBI functional.
+    \begin{enumerate}
+      \item \textbf{The Pfaffian claim is false.} It was asserted that
+      $\sqrt{\det(\delta^\mu_\nu + \ell_{\mathrm{sp}}^2 F^\mu{}_\nu)}$ equals the Pfaffian of $F$
+      and can change sign in Euclidean signature. For real antisymmetric $F$ the eigenvalues occur
+      in pairs $\pm i\lambda_j$, so
+      $\det(I + \ell_{\mathrm{sp}}^2 F) = \prod_j\bigl(1+\ell_{\mathrm{sp}}^4\lambda_j^2\bigr)
+      \geq 1 > 0$:
+      the determinant is manifestly positive, and it is not the Pfaffian of $F$.
+      \item \textbf{The proposed replacement has the opposite sign.} The combination
+      $M_{\mu\nu} = F_{\mu\rho}F^{\rho}{}_{\nu}$ was described as positive semidefinite. For
+      antisymmetric $F$, $M = -FF^{\mathsf{T}}$ is negative semidefinite.
+      \item \textbf{The powers of $\ell_{\mathrm{sp}}$ are inconsistent.} $M$ is quadratic in the
+      field strength, so a dimensionless matrix argument requires $\ell_{\mathrm{sp}}^4 M$, not
+      $\ell_{\mathrm{sp}}^2 M$; the expansion given in the proof changed the power between the
+      statement and its conclusion.
+      \item \textbf{The joint tensor is dimensionally inhomogeneous.} With
+      $\kappa^2 = 8\pi G_N$, the terms $R_{\mu\nu}$ and $\kappa F_{\mu\rho}F^{\rho}{}_{\nu}$ do
+      not carry the same dimension, so the sum $R_{\mu\nu} + \kappa F^2_{\mu\nu}$ is not defined.
+      \item \textbf{The boundedness property does not follow.} The claimed upper bound was
+      derived from $|\det(I+X)| \leq e^{\mathrm{tr}X}$, an inequality valid for positive
+      semidefinite $X$ and not applicable here; no fixed upper bound follows, and the asserted
+      one is false in general.
+    \end{enumerate}
 
-    \subsection{Gauge-sector Born--Infeld completion}
-      \label{ssec:gauge-BI}
+    No replacement completion is asserted in this paper. Whether the admissibility saturation
+    bound $c_{\mathrm{BI}}$~\cite{Beau2026c} induces a well-defined non-linear completion of the
+    joint functional is left open, to be rebuilt independently if at all.
 
-      In the gauge sector, the Born--Infeld saturation condition requires that the
-      effective amplitude of the gauge field satisfies $A_n \leq c_{\mathrm{BI}} / \sqrt{\lambda_n}$
-      at each spectral mode~\cite{Beau2026c}.
-      At the level of the field theory, the natural BI extension involves the
-      combination $\delta^\mu_\nu + \ell_{\mathrm{sp}}^2 F^\mu{}_\nu$; however,
-      for a non-abelian $F^a_{\mu\nu}$, the antisymmetry $F_{\mu\nu} = -F_{\nu\mu}$
-      implies that $\sqrt{\det(\delta + \ell^2_{\mathrm{sp}} F)}$ is not automatically
-      real (it equals the Pfaffian of $F$, which can change sign in Euclidean signature).
-      The unambiguous non-abelian replacement uses the symmetric positive-semidefinite
-      combination $M_{\mu\nu} \equiv F_{\mu\rho}F^\rho{}_\nu$, which is gauge-covariant
-      and has non-negative eigenvalues.
-      The gauge BI Lagrangian is therefore written as:
-      \begin{equation}
-        \mathcal{L}_{BI}[A]
-        = \frac{1}{g_{BI}^2\,\ell_{\mathrm{sp}}^4}
-        \Bigl[
-          \sqrt{\det\!\left(\delta^\mu_\nu
-                        + \ell_{\mathrm{sp}}^2\,M^\mu{}_\nu\right)} - 1
-          \Bigr],
-        \qquad
-        M^\mu{}_\nu = F^{a\mu\rho}F^a_{\rho\nu},
-        \label{eq:BI-gauge}
-      \end{equation}
-      which is manifestly symmetric in its matrix argument and reduces to the standard
-      BI form in the abelian case.
 
-      \begin{lemma}[Gauge BI reduces to Yang--Mills]
-        \label{lem:BI-YM}
-        In the limit $\ell_{\mathrm{sp}}^2 M^{\mu}{}_\nu \to 0$:
-        \[
-          \mathcal{L}_{BI}[A]
-          \;=\;
-          -\tfrac{1}{4}\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})
-          \;+\;
-          O\!\left(\ell_{\mathrm{sp}}^4 \mathrm{Tr}(M)^2\right).
-        \]
-      \end{lemma}
-
-      \begin{proof}
-        Expand $\sqrt{\det(I + \ell^2_{\mathrm{sp}} M)} = 1 + \tfrac{1}{2}\ell^2_{\mathrm{sp}}\mathrm{tr}(M)
-        + O(\ell^4_{\mathrm{sp}})$.
-        Since $\mathrm{tr}(M^\mu{}_\nu) = F^{a\mu\rho}F^a_{\rho\mu} = -\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})$,
-        the leading term is $-\tfrac{1}{2}\ell^4_{\mathrm{sp}}\,g^{-2}_{BI}\,\mathrm{Tr}(F^2)$,
-        matching the Yang--Mills Lagrangian $-\tfrac{1}{4}\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})$
-        with $g_{YM} = g_{BI}$.
-        The symmetric argument $M$ avoids the sign ambiguity of $\sqrt{\det(\delta + \ell^2 F)}$
-        in the non-abelian case.
-      \end{proof}
-
-    \subsection{Joint Eddington--Born--Infeld functional}
-      \label{ssec:joint-EBI}
-
-      \begin{definition}[Joint EBI functional]
-        \label{def:EBI}
-        The joint Eddington--Born--Infeld extension of the projective spectral entropy
-        functional is:
-        \begin{align}
-          S_{EBI}[g,A]
-          &=
-          \frac{2}{\kappa^2}
-          \int_M
-          \Bigl[
-            \sqrt{\det\!\left(g_{\mu\nu}
-                          + \ell_{\mathrm{sp}}^2\,\bigl(R_{\mu\nu} + \kappa F^a_{\mu\rho}F^{a\rho}{}_\nu\bigr)
-            \right)}
-            - \sqrt{g}
-            \Bigr]
-          d^4x,
-          \label{eq:EBI}
-        \end{align}
-        where $\kappa^2 = 8\pi G_N$ and the Ricci tensor $R_{\mu\nu}$ is computed from $g$.
-      \end{definition}
-
-      \begin{theorem}[EBI recovers joint Einstein--Yang--Mills at leading order]
-        \label{thm:EBI}
-        In the limit $\ell_{\mathrm{sp}}^2(R_{\mu\nu} + \kappa F^2_{\mu\nu})\to 0$, the
-        variation of $S_{EBI}[g,A]$ reproduces the joint system~\eqref{eq:Einstein-YM}--\eqref{eq:YM}
-        at leading order.
-        The EBI functional is regular at $\ell_{\mathrm{sp}}$ in both sectors and
-        satisfies the following boundary conditions:
-        \begin{enumerate}
-          \item[\textrm{(EBI-1)}] $S_{EBI}[g,A]\to c_{EH} a_2[g] + c_{YM} a_4[g,A]$ as $\ell_{\mathrm{sp}}\to 0$;
-          \item[\textrm{(EBI-2)}] $S_{EBI}[g,A]$ is bounded above by $\ell_{\mathrm{sp}}^{-4}\mathrm{Vol}(M)$;
-          \item[\textrm{(EBI-3)}] $S_{EBI}$ is a minimal admissible diffeomorphism-invariant completion
-          satisfying (EBI-1) and (EBI-2) within the tensorial class in which it depends on
-          $g$ and $A$ only through the combination $g_{\mu\nu} + \ell_{\mathrm{sp}}^2(R_{\mu\nu} + \kappa F^2_{\mu\nu})$;
-          uniqueness within this class is partial, subject to the residual ambiguity
-          in the precise form of $\Xi_{\mu\nu}$ noted in~\cite{Beau2026c}.
-        \end{enumerate}
-      \end{theorem}
-
-      \begin{proof}
-        Expanding the determinant in~\eqref{eq:EBI}:
-        \begin{align}
-          \sqrt{\det(g + \ell^2_{\mathrm{sp}}\Xi)}
-          &= \sqrt{g}
-          \Bigl[
-            1
-            + \tfrac{1}{2}\ell_{\mathrm{sp}}^2 g^{\mu\nu}\Xi_{\mu\nu}
-            - \tfrac{1}{4}\ell_{\mathrm{sp}}^4\bigl(
-            \tfrac{1}{2}(g^{\mu\nu}\Xi_{\mu\nu})^2
-            - g^{\mu\rho}g^{\nu\sigma}\Xi_{\mu\nu}\Xi_{\rho\sigma}
-            \bigr)
-            + O(\ell_{\mathrm{sp}}^6\Xi^3)
-            \Bigr],
-          \nonumber
-        \end{align}
-        where $\Xi_{\mu\nu} = R_{\mu\nu} + \kappa F^a_{\mu\rho}F^{a\rho}{}_\nu$.
-        The $\ell_{\mathrm{sp}}^2$ term gives $\kappa^{-2}\ell_{\mathrm{sp}}^2 R\sqrt{g}/2$
-        for the Ricci scalar part, matching $c_{EH} a_2[g]$ under the identification
-        $\ell_{\mathrm{sp}}^2 = \kappa^2 c_{EH}/2$.
-        The gauge contribution at this order is $\ell_{\mathrm{sp}}^2 F^2\sqrt{g}$,
-        which matches $c_{YM} a_4$ upon renormalization.
-        Property~(EBI-2) follows from the bound $|\det(I + X)| \leq e^{\mathrm{tr}(X)}$ applied to
-        $X = \ell_{\mathrm{sp}}^2 g^{-1}\Xi$.
-        Uniqueness within the ansatz class is partial; property~(EBI-3) follows by the argument of~\cite{Beau2026c} applied to
-        the joint tensor $\Xi_{\mu\nu}$, up to the residual ambiguity in the traceless modification of $R_{\mu\nu}$.
-      \end{proof}
-
-      \begin{remark}
-        The joint EBI functional~\eqref{eq:EBI} is the Cosmochrony analogue of the
-        Bañados--Ferreira--Skordis theory~\cite{Banados2010} and of the Eddington action,
-        extended to include gauge curvature.
-        The admissibility saturation bound $c_{\mathrm{BI}}$ provides the physical justification
-        for the BI structure: the effective amplitude of any admissible mode is bounded
-        above by $c_{\mathrm{BI}}/\sqrt{\lambda_n}$, which at the field-theory level becomes the
-        saturation of the determinant form.
-        The residual ambiguity in the precise form of $\Xi_{\mu\nu}$ (whether to use
-        $R_{\mu\nu}$ or $R_{\mu\nu} - \tfrac{1}{4}g_{\mu\nu}R$) noted in~\cite{Beau2026c}
-        persists in the joint functional and is the primary open point of the completion.
-      \end{remark}
-
-  \section{The gauge--gravity hierarchy ratio}
+  \section{Withdrawal of the quantitative hierarchy}
     \label{sec:hierarchy}
 
-    \subsection{The two induced couplings}
-      \label{ssec:two-couplings}
+    Earlier versions of this paper stated a proposition asserting
+    \[
+      G_N\,g_{\mathrm{YM}}^2
+      \;=\;
+      \frac{12\,\ell_{\mathrm{sp}}^2}{\dim V}\cdot\Bigl[\log\frac{\Lambda}{\mu}\Bigr]^{-1}
+      \;\ll\;1
+    \]
+    as a structural output requiring no fine-tuning, on the strength of explicit induced values
+    $G_N^{-1} \sim \ell_{\mathrm{sp}}^{-2}$ and
+    $g_{\mathrm{YM}}^{-2} \sim \log(\Lambda/\mu)$.
+    That proposition is \emph{withdrawn}, together with the explicit coupling values it rests on.
 
-      From~\cite{Beau2026h} and~\cite{Beau2026q12}, the two induced couplings of the
-      joint functional are given in~\eqref{eq:induced-couplings}.
-      Both emerge from the same spectral cutoff $\ell_{\mathrm{sp}}$ and the
-      same renormalization group flow; they differ in the UV divergence structure
-      of their respective Seeley--DeWitt coefficients ($\Lambda^2$ versus $\log\Lambda$).
-      In particular:
-      \begin{equation}
-        G_N \;\sim\; \frac{16\pi^2}{\dim V}\,\ell_{\mathrm{sp}}^{2}
-        \qquad\text{and}\qquad
-        g_{YM}^{2} \;\sim\; \frac{12\cdot 16\pi^2}{\log(\Lambda/\mu)}.
-        \label{eq:couplings-explicit}
-      \end{equation}
+    Two independent reasons make it untenable. First, it contradicts the corrected companion
+    results: Gravity~3.3.1~\cite{Beau2026h} establishes that the renormalized Einstein
+    coefficient, hence $G_N$, is a matching datum whose value and sign are fixed by
+    renormalization conditions rather than predicted, and Q12~1.3~\cite{Beau2026q12} establishes
+    the same for $g_{\mathrm{YM}}$, of which only the logarithmic running is calculable and whose
+    coefficient is representation-dependent through the Dynkin index $I_\rho$. A ratio of two
+    quantities that are each matching data is itself a matching datum, not an output. Second, the
+    derivation used the coefficient identification corrected in
+    Remark~\ref{rem:no-prediction}.
 
-    \subsection{The hierarchy ratio}
-      \label{ssec:ratio}
-
-      \begin{proposition}[Gauge--gravity hierarchy]
-        \label{prop:hierarchy}
-        The ratio of the two induced couplings is:
-        \begin{equation}
-          G_N\,g_{YM}^2
-          \;=\;
-          \frac{12\,\ell_{\mathrm{sp}}^2}{\dim V}
-          \cdot\Bigl[\log\frac{\Lambda}{\mu}\Bigr]^{-1}.
-          \label{eq:ratio}
-        \end{equation}
-        For $\ell_{\mathrm{sp}} < \ell_{\mathrm{Planck}}$ and $\Lambda/\mu\gg 1$:
-        \begin{equation}
-          G_N\,g_{YM}^2 \;\ll\; 1.
-          \label{eq:hierarchy}
-        \end{equation}
-      \end{proposition}
-
-      \begin{proof}
-        Substitute~\eqref{eq:couplings-explicit} and multiply:
-        \[
-          G_N\,g_{YM}^2
-          \;\sim\;
-          \frac{16\pi^2\,\ell_{\mathrm{sp}}^2}{\dim V}
-          \cdot
-          \frac{12\cdot 16\pi^2}{(16\pi^2)^2\,\log(\Lambda/\mu)}
-          \;=\;
-          \frac{12\,\ell_{\mathrm{sp}}^2}{\dim V\,\log(\Lambda/\mu)}.
-        \]
-        The numerical factors of $16\pi^2$ cancel between $G_N$ and $g_{YM}^2$.
-        With $\ell_{\mathrm{sp}} \sim 10^{-35}$ m and $\log(\Lambda/\mu) \sim \mathcal{O}(10^2)$
-        at electroweak scale, and $\dim V \geq 4$ for $G_\Pi \supseteq \mathrm{SU}(2)\times\mathrm{U}(1)$,
-        the ratio is suppressed by $\ell_{\mathrm{sp}}^2 \sim 10^{-70}$ m$^2$, confirming~\eqref{eq:hierarchy}.
-      \end{proof}
-
-    \subsection{Structural interpretation}
-      \label{ssec:structural}
-
-      The gauge--gravity hierarchy~\eqref{eq:hierarchy} is a structural consequence of
-      the Seeley--DeWitt order separation between the two sectors:
-      \begin{equation}
-        \underbrace{a_2 \;\longrightarrow\; \text{gravity},\; G_N^{-1} \sim \ell_{\mathrm{sp}}^{-2}}_{%
-          \text{quadratic UV divergence, non-renormalizable}}
-        \qquad
-        \underbrace{a_4 \;\longrightarrow\; \text{gauge},\; g_{YM}^{-2} \sim \log\Lambda}_{%
-          \text{logarithmic UV divergence, renormalizable}}.
-        \label{eq:hierarchy-summary}
-      \end{equation}
-      The single spectral cutoff $\ell_{\mathrm{sp}}$ generates two qualitatively
-      different divergence structures.
-      The hierarchy $G_N g_{YM}^2 \ll 1$ is therefore a consequence of the spectral
-      stratification of the theory and requires no separate fine-tuning or
-      anthropic selection.
-
-      \begin{remark}
-        The $\dim V$ factor in~\eqref{eq:ratio} provides a mild sensitivity of the
-        hierarchy ratio to the gauge group.
-        For $G_\Pi = \mathrm{SU}(2)\times\mathrm{U}(1)$ (unconditional~\cite{Beau2026q6a}),
-        $\dim V = 4$; for $G_\Pi = \mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
-        (proved unconditionally on the standard graph; $[H\text{-color}]_{\mathrm{pointwise}}$
-        established analytically in~\cite{Beau2026a35} via the single-frequency BI fingerprint
-        structure, numerical confirmation in~\cite{Beau2026a36}), $\dim V = 12$ in
-        the fundamental representation.
-        The ratio~\eqref{eq:ratio} is thus three times smaller for the full Standard Model
-        gauge group, increasing the hierarchy suppression.
-      \end{remark}
+    What survives is qualitative and scheme-independent: the two sectors sit at different orders
+    of the heat-kernel expansion and therefore carry different degrees of ultraviolet divergence,
+    \begin{equation}
+      a_2 \;\longrightarrow\; \text{gravity, quadratic},
+      \qquad
+      a_4 \;\longrightarrow\; \text{gauge, logarithmic}.
+      \label{eq:divergence-degrees}
+    \end{equation}
+    This difference in divergence degree is a genuine structural feature of the expansion. It
+    does not, by itself, determine the finite renormalized couplings, and no numerical value or
+    bound for $G_N g_{\mathrm{YM}}^2$ is claimed here.
 
   \section{Epistemic status}
     \label{sec:epistemic}
@@ -726,28 +582,45 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
 
       \begin{table}[h]
         \centering
-        \renewcommand{\arraystretch}{1.3}
-        \begin{tabular}{lll}
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabularx}{\textwidth}{@{}p{0.30\textwidth}p{0.24\textwidth}X@{}}
           \toprule
           Result & Status & Dependence \\
           \midrule
-          $\delta_g S_\Pi \ni c_{YM} T^{YM}_{\mu\nu}$ (Lemma~\ref{lem:YM-stress})
-          & Theorem-level & Metric-independence of $F_{\mu\nu}$ \\
-          Coupled EYM system (Theorem~\ref{thm:EYM})
-          & Theorem-level & Lemma~\ref{lem:YM-stress}, \cite{Beau2026h,Beau2026q12} \\
-          $a_6$ cross-coupling (Theorem~\ref{thm:a6})
-          & Standard $+$ structural & \cite{Vassilevich2003} \\
-          EBI completion (Theorem~\ref{thm:EBI})
-          & Structural, uniqueness ansatz & \cite{Beau2026c} \\
-          $\Xi_{\mu\nu}$ ambiguity in EBI & Open & Tensorial completion \\
-          Hierarchy ratio (Proposition~\ref{prop:hierarchy})
-          & Structural prediction & \cite{Beau2026h,Beau2026q12} \\
+          $\delta_g\!\int\!\sqrt{g}\,\mathrm{tr}_\rho(F^2) = 2\tau_{\mu\nu}$
+          (Lemma~\ref{lem:YM-stress})
+          & Theorem-level
+          & $F_{\mu\nu}$ metric-independent with indices down \\
+          Conditional EYM system (Theorem~\ref{thm:EYM})
+          & Theorem-level, conditional on matching
+          & Lemma~\ref{lem:YM-stress} \\
+          $8\pi G_N = 1/(2c_{\mathrm{EH}})$, not $c_{\mathrm{YM}}/c_{\mathrm{EH}}$
+          (Remark~\ref{rem:no-prediction})
+          & Definitional (matching)
+          & \cite{Beau2026h,Beau2026q12} \\
+          Values of $G_N$, $g_{\mathrm{YM}}$, $\Lambda_{\mathrm{ren}}$
+          & Independent renormalized data (not predicted)
+          & --- \\
+          $a_6$ invariant inventory (Section~\ref{sec:a6})
+          & Inventory only; coefficients conditional
+          & \cite{Vassilevich2003} \\
+          $a_6$ logarithmically divergent in $d=4$
+          & Withdrawn (false: $a_6 \propto t^{+1}$)
+          & --- \\
+          EBI completion
+          & Withdrawn (Section~\ref{sec:EBI})
+          & --- \\
+          Numerical hierarchy $G_N g_{\mathrm{YM}}^2$
+          & Withdrawn (Section~\ref{sec:hierarchy})
+          & --- \\
+          Divergence degrees $a_2$ quadratic / $a_4$ logarithmic
+          & Structural
+          & \cite{Vassilevich2003} \\
           $G_\Pi = \mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
-          & Proved (unconditional, O31~v1.5);
-          $[H\text{-color}]_{\mathrm{pointwise}}$
-          via single-frequency BI fingerprint & \cite{Beau2026a35,Beau2026a36} \\
+          & Input; $[H\text{-color}]_{\mathrm{pointwise}}$ established
+          & \cite{Beau2026a35,Beau2026a36} \\
           \bottomrule
-        \end{tabular}
+        \end{tabularx}
         \caption{Epistemic status of the main results.}
         \label{tab:status}
       \end{table}
@@ -769,34 +642,39 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
       $B = c_1 b_1 + c_2 b_2 + c_3 b_3$, and the orbit dilation
       $B \mapsto \omega B$ is a bijection of $\mathbb{Z}/q\mathbb{Z}$, so
       $\sigma_c(n) = \sigma_{\omega c}(n) = \sigma_{\omega^2 c}(n)$ holds exactly.
-      All results of the present paper are independent of these results;
-      the identification of $G_\Pi$ is an input, and the only remaining
-      sensitivity is in the value of $\dim V$ entering the hierarchy ratio.
+      All results of the present paper are independent of these results:
+      the identification of $G_\Pi$ is an input, and it enters here only through the
+      representation $\rho$ in which the trace $\mathrm{tr}_\rho$ and the Dynkin index $I_\rho$
+      are taken.
 
     \subsection{Open points}
       \label{ssec:open}
 
       The following open points are carried forward:
       \begin{enumerate}
-        \item \textbf{EBI ambiguity.}
-        The precise form of the tensor $\Xi_{\mu\nu}$ in the joint EBI functional
-        (whether to use $R_{\mu\nu}$, $R_{\mu\nu} - \tfrac{1}{4}g_{\mu\nu}R$,
-        or another traceless modification) is not uniquely fixed at the level of
-        the present paper.
-        This ambiguity is inherited from the gravitational BI completion
-        of~\cite{Beau2026c} and affects only subleading terms in the IR expansion.
+        \item \textbf{Non-linear completion.}
+        Whether the admissibility saturation bound $c_{\mathrm{BI}}$~\cite{Beau2026c} induces a
+        well-defined non-linear completion of the joint functional is open. The construction
+        attempted in earlier versions is withdrawn (Section~\ref{sec:EBI}) and would have to be
+        rebuilt from scratch, with dimensional consistency and the sign structure of $F$ checked
+        at each step.
 
         \item \textbf{Quantitative $a_6$ coefficients.}
-        The numerical values of $\gamma_1, \gamma_2, \ldots$ in~\eqref{eq:a6}
-        depend on the specific operator $\mathcal{A}_{g,A}$ and require explicit
-        computation for the admissible bundle.
-        This is deferred to a companion numerical study.
+        The coefficients of the invariants listed in~\eqref{eq:a6-inventory} are not computed
+        here; they require an explicit Seeley--DeWitt computation for the admissible operator
+        $\mathcal{A}_{g,A}$, or independent matching. Until then no $a_6$ correction to the
+        equations of motion is asserted.
+
+        \item \textbf{Matching data.}
+        $G_N$, $g_{\mathrm{YM}}$ and $\Lambda_{\mathrm{ren}}$ are supplied from outside the
+        expansion. Whether the admissibility structure constrains any combination of them is
+        open; the present paper establishes only that the spectral expansion does not determine
+        them individually.
 
         \item \textbf{Lorentzian continuation.}
         All spectral derivations are performed in Euclidean signature.
-        The Lorentzian continuation of the joint EBI functional is established
-        at the level of Q5b~\cite{Beau2026q6b} for the geometric sector;
-        its extension to the gauge sector remains an open step.
+        The Lorentzian continuation is established at the level of Q5b~\cite{Beau2026q6b} for the
+        geometric sector; its extension to the gauge sector remains an open step.
 
         \item \textbf{$\mathrm{SU}(3)$ Yang--Mills uniqueness.}
         The analogue of Theorem~\ref{thm:EYM} for the internal structure of
@@ -810,59 +688,41 @@ and the Hierarchy Ratio from Projective Spectral Entropy}
   \section{Conclusion}
     \label{sec:conclusion}
 
-    The main result of this paper is the derivation of the coupled Einstein--Yang--Mills
-    system~\eqref{eq:Einstein-YM}--\eqref{eq:YM} as the joint variational problem of the
-    projective spectral entropy functional $S_\Pi[g,A]$, completing the synthesis
-    announced in~\cite{Beau2026q12}.
+    The robust result of this paper is the \emph{conditional} Einstein--Yang--Mills
+    system~\eqref{eq:Einstein-YM}--\eqref{eq:YM}, obtained by varying a single renormalized local
+    action with respect to the metric and to the connection.
 
-    \paragraph{The central structural observation.}
-      The joint functional $S_\Pi[g,A] = \tfrac{1}{2}\log\det'\mathcal{A}_{g,A}$
-      encodes both gravitational and gauge dynamics in its Seeley--DeWitt expansion:
-      \begin{align*}
-        a_2 &\;\longrightarrow\; \text{Einstein gravity},\quad
-        G_{\mu\nu} = 0 \text{ (in vacuum)},\\
-        a_4 &\;\longrightarrow\; \text{Yang--Mills gauge dynamics},\quad
-        D_\mu F^{a\mu\nu} = 0,\\
-        a_4 \text{ under } \delta_g &\;\longrightarrow\;
-        \text{gauge--matter coupling to gravity},\quad
-        G_{\mu\nu} = 8\pi G_N T^{YM}_{\mu\nu},\\
-        a_6 &\;\longrightarrow\; \text{gauge--gravity cross-coupling},\quad
-        R_{\mu\nu\rho\sigma}F^{\mu\nu}F^{\rho\sigma}.
-      \end{align*}
-      The hierarchy of interactions is identified with a hierarchy of spectral order.
-      This identification is the conceptually durable contribution of the present trilogy:
-      gravity and gauge dynamics are not unified by enlarging the symmetry group or
-      adding fields, but are \emph{stratified} by the Seeley--DeWitt level at which
-      the same operator $\mathcal{A}_{g,A}$ responds to variation.
-      The different UV behaviours of the two sectors --- quadratic divergence for gravity,
-      logarithmic divergence for gauge --- are a direct consequence of this spectral
-      stratification, as is the gauge--gravity hierarchy $G_N g_{YM}^2 \ll 1$,
-      which is structurally suppressed in $\ell_{\mathrm{sp}}^2$ and $[\log(\Lambda/\mu)]^{-1}$
-      without fine-tuning.
+    \paragraph{What is established.}
+      One matched local action supplies both equations: the fixed-metric connection variation
+      gives $D_\mu F^{a\mu\nu} = 0$, and the metric variation of the same
+      $\mathrm{tr}_\rho(F^2)$ term gives its energy--momentum tensor, via
+      $\delta\!\int\!\sqrt{g}\,\mathrm{tr}_\rho(F^2)/\delta g^{\mu\nu} = 2\sqrt{g}\,\tau_{\mu\nu}$.
+      The gravitational and gauge sectors sit at different orders of the heat-kernel expansion
+      and therefore carry different degrees of ultraviolet divergence,
+      quadratic at $a_2$ and logarithmic at $a_4$~\eqref{eq:divergence-degrees}.
 
-    \paragraph{What the programme is.}
-      This trilogy (Gravity~3.0~\cite{Beau2026h}, Q12~\cite{Beau2026q12}, Q13) can now
-      be stated in one sentence: \emph{the Cosmochrony programme is a spectrally
-  stratified theory of emergent interactions, in which the type of a fundamental
-  interaction is determined by the Seeley--DeWitt order at which the admissible
-  operator responds.}
-      The conventional question ``what symmetry unifies gravity and gauge?'' is replaced by:
-      ``at what spectral order does the projection respond?''
+    \paragraph{What is not established.}
+      The normalisation of~\eqref{eq:Einstein-YM} is matching, not prediction: after
+      $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and $c_F = 1/(4g_{\mathrm{YM}}^2)$ the equation holds by
+      definition of $T^{\mathrm{YM}}$, and $8\pi G_N = 1/(2c_{\mathrm{EH}})$ rather than
+      $c_{\mathrm{YM}}/c_{\mathrm{EH}}$ (Remark~\ref{rem:no-prediction}).
+      $G_N$, $g_{\mathrm{YM}}$ and $\Lambda_{\mathrm{ren}}$ remain independent renormalized data.
+      Three claims of earlier versions are withdrawn: the Eddington--Born--Infeld theorem
+      (Section~\ref{sec:EBI}), the numerical gauge--gravity hierarchy
+      (Section~\ref{sec:hierarchy}), and the identification of a unique logarithmically divergent
+      $a_6$ cross-coupling (Section~\ref{sec:a6}).
 
-    \paragraph{Remaining open points.}
-      The Eddington--Born--Infeld completion of Section~\ref{sec:EBI} provides a
-      unified non-linear regulator at $\ell_{\mathrm{sp}}$, recovering both
-      sector-specific completions as limits.
-      The $a_6$ cross-coupling of Section~\ref{sec:a6} is suppressed by
-      $\ell_{\mathrm{sp}}^2$ and becomes relevant only near $\ell_{\mathrm{sp}}$.
-      The residual open points --- EBI tensor ambiguity, $a_6$ numerical coefficients,
-      Lorentzian continuation, $\mathrm{SU}(3)$ Yang--Mills uniqueness --- are each
-      well-posed and bounded in scope.
-      They do not affect the structural hierarchy result~\eqref{eq:ratio} or
-      the coupled equations of motion~\eqref{eq:Einstein-YM}--\eqref{eq:YM}.
-      The natural continuation of the programme is the treatment of fermionic matter
-      and chirality, where the spectral stratification principle predicts the
-      existence of a dedicated spectral level carrying spinor structure.
+    \paragraph{Interpretive outlook.}
+      Beyond these individually labelled results, the reading suggested by the trilogy
+      (Gravity~\cite{Beau2026h}, Q12~\cite{Beau2026q12}, Q13) is that gravity and gauge dynamics
+      are not unified by enlarging the symmetry group or adding fields, but are \emph{stratified}
+      by the Seeley--DeWitt level at which the same operator $\mathcal{A}_{g,A}$ responds to
+      variation --- replacing ``what symmetry unifies gravity and gauge?'' with ``at what
+      spectral order does the projection respond?''.
+      This is an interpretive outlook, not a theorem: it rests on the qualitative divergence-degree
+      separation, which is structural, and not on any of the withdrawn quantitative claims.
+      The natural continuation of the programme is the treatment of fermionic matter and
+      chirality.
 
       \clearpage
       \bibliographystyle{plain}
