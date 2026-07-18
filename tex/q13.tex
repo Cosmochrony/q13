@@ -77,9 +77,10 @@ from Projective Spectral Entropy}
     renormalized matching data.
     The derivation is Euclidean, and identifying the result with the Lorentzian
     Einstein--Yang--Mills equations requires a continuation not performed here.
-    For the $a_6$ sector we give only an inventory of the independent invariants that can occur:
-    in four dimensions $a_6$ produces no ultraviolet divergence, and the renormalized
-    dimension-six coefficients are themselves matching data.
+    For the $a_6$ sector we give only a representative spanning list of the invariants that can
+    occur, modulo integrations by parts and Bianchi identities: in four dimensions $a_6$ produces
+    no ultraviolet divergence, and the renormalized dimension-six coefficients are themselves
+    matching data.
     Statements about $\Lambda^4$, $\Lambda^2$ and $\log\Lambda$ behaviour refer specifically to a
     proper-time cutoff and are not scheme-independent.
     The gauge group $G_\Pi$ is taken as input from the spectral admissibility sub-programme.
@@ -146,10 +147,11 @@ from Projective Spectral Entropy}
         (Remark~\ref{rem:signature}).
 
         \item \textbf{An inventory of the $a_6$ sector.}
-        We list the independent gauge--gravity invariants that can occur at order $a_6$, and
-        delimit what is \emph{not} determined: in four dimensions $a_6$ produces no ultraviolet
-        divergence, the renormalized dimension-six coefficients are matching data, and no unique
-        cross-term is singled out (Section~\ref{sec:a6}).
+        We give a representative spanning list of the gauge--gravity invariants that can occur at
+        order $a_6$, modulo integrations by parts and Bianchi identities, and delimit what is
+        \emph{not} determined: in four dimensions $a_6$ produces no ultraviolet divergence, the
+        renormalized dimension-six coefficients are matching data, and no unique cross-term is
+        singled out (Section~\ref{sec:a6}).
       \end{enumerate}
 
       No non-linear completion of the joint functional and no numerical value for the ratio
@@ -462,8 +464,10 @@ from Projective Spectral Entropy}
 
       By dimension and derivative counting, $a_6$ collects local invariants of total derivative
       order six~\cite{Vassilevich2003,ParkerToms2009}. Writing $\Omega^{\mathrm{gauge}} = F$ for
-      the gauge component of the bundle curvature, the terms that can appear include, besides the
-      purely gravitational cubic-curvature and $E$-dependent invariants:
+      the gauge component of the bundle curvature, a representative spanning list of the
+      gauge-dependent terms that can appear --- understood modulo integrations by parts and
+      Bianchi identities, and besides the purely gravitational cubic-curvature and $E$-dependent
+      invariants --- is:
       \begin{align}
         &R\,\mathrm{tr}_\rho(F_{\mu\nu}F^{\mu\nu}),
         \qquad
@@ -478,13 +482,17 @@ from Projective Spectral Entropy}
         \mathrm{tr}_\rho(D_\mu F^{\mu\nu}\,D^\rho F_{\rho\nu}),
         \label{eq:a6-inventory}
       \end{align}
-      each with its own independent coefficient. Two structural points follow.
+      This list is \emph{not} a basis: the derivative terms are related to the $R\,F^2$-type and
+      $F^3$ terms by integration by parts and the Bianchi identities, so the entries
+      of~\eqref{eq:a6-inventory} are not mutually independent, and reducing them to a minimal
+      independent set is part of the computation not performed here.
+      Two structural points nevertheless follow.
       \begin{enumerate}
         \item The pure-gauge invariant at this order is \emph{cubic},
         $\mathrm{tr}_\rho(F^3)$. A quartic term $\mathrm{tr}_\rho(\Omega^4)$ has derivative order
         eight and belongs to $a_8$, not to $a_6$.
-        \item There is no single ``leading cross-coupling''. The three mixed invariants
-        in~\eqref{eq:a6-inventory} are independent, so none of them can be singled out as
+        \item There is no single ``leading cross-coupling''. Several mixed structures occur and
+        are interrelated by the above identities, so none of them can be singled out as
         \emph{the} gauge--gravity cross-term on the strength of the present analysis.
       \end{enumerate}
 

@@ -52,9 +52,10 @@ scheme-dependent statement: the zeta-regularized determinant carries no power di
 term does contribute to the metric equation) and the dimension-six coefficients are independent
 renormalized inputs.
 
-**$a_6$**: inventory only. In four dimensions $a_6$ produces no ultraviolet divergence; the
-pure-gauge invariant at this order is $\mathrm{tr}_\rho(F^3)$; several independent $RF^2$-type and
-derivative invariants occur, so no unique cross-term is singled out.
+**$a_6$**: inventory only — a representative spanning list, modulo integrations by parts and
+Bianchi identities, not a basis. In four dimensions $a_6$ produces no ultraviolet divergence; the
+pure-gauge invariant at this order is $\mathrm{tr}_\rho(F^3)$; several $RF^2$-type and derivative
+structures occur and are interrelated by those identities, so no unique cross-term is singled out.
 
 ## Status
 
