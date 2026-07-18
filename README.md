@@ -22,13 +22,17 @@ $$\frac{1}{\sqrt{g}}\frac{\delta}{\delta g^{\mu\nu}}\int \sqrt{g}\,\mathrm{tr}_\
 \qquad
 \tau_{\mu\nu} = \mathrm{tr}_\rho\!\left(F_{\mu\rho}F_\nu{}^\rho - \tfrac14 g_{\mu\nu}F^2\right).$$
 
-Once the Wilson coefficients are matched canonically, $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and
-$c_F = 1/(4g_{\mathrm{YM}}^2)$, the standard equation
-$G_{\mu\nu} + \Lambda_{\mathrm{eff}} g_{\mu\nu} = 8\pi G_N T^{\mathrm{YM}}_{\mu\nu}$ is recovered
-**by definition** of $T^{\mathrm{YM}}$.
+Since $\mathrm{tr}_\rho(F^2) = I_\rho F^a_{\mu\nu}F^{a\,\mu\nu}$, canonical matching fixes the
+products $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and $c_F I_\rho = 1/(4g_{\mathrm{YM}}^2)$, where
+$I_\rho$ is the Dynkin index of the fibre representation. The equation
+$G_{\mu\nu} + \Lambda_{\mathrm{eff}} g_{\mu\nu} = 8\pi G_N T^{\mathrm{YM}}_{\mu\nu}$ then holds
+**by definition** of $T^{\mathrm{YM}}$, with $8\pi G_N = 1/(2c_{\mathrm{EH}})$ depending on the
+Einstein coefficient alone. The derivation is Euclidean; identification with the Lorentzian
+Einstein--Yang--Mills equations requires a continuation not performed here.
 
-**Central message**: one matched local action supplies both field equations; the spectral
-expansion fixes the *degree of ultraviolet divergence* of each sector, not the finite couplings.
+**Central message**: one matched local action supplies both field equations; within a proper-time
+cutoff the spectral expansion fixes the *degree of ultraviolet divergence* of each sector, not the
+finite couplings.
 
 ## Key Results
 
@@ -38,36 +42,19 @@ action yields
 1. $G_{\mu\nu} + \Lambda_{\mathrm{eff}} g_{\mu\nu} = 8\pi G_N T^{\mathrm{YM}}_{\mu\nu}$,
 2. $D_\mu F^{a\mu\nu} = 0$ (fixed-metric connection variation),
 
-with $8\pi G_N = 1/(2c_{\mathrm{EH}})$ — **not** $c_{\mathrm{YM}}/c_{\mathrm{EH}}$.
+with $8\pi G_N = 1/(2c_{\mathrm{EH}})$, depending on the Einstein coefficient alone.
 
-**Structural (qualitative only)**: the two sectors carry different ultraviolet divergence
-degrees, quadratic at $a_2$ and logarithmic at $a_4$.
+**Structural (qualitative only, within a proper-time cutoff)**: the two sectors carry different
+ultraviolet divergence degrees, quadratic at $a_2$ and logarithmic at $a_4$. This is a
+scheme-dependent statement: the zeta-regularized determinant carries no power divergences.
 
-**Matching data, not predictions**: $G_N$, $g_{\mathrm{YM}}$ and $\Lambda_{\mathrm{ren}}$ are
-independent renormalized inputs. The cosmological $a_0$ term does contribute to the metric
-equation and is retained.
+**Matching data, not predictions**: $G_N$, $g_{\mathrm{YM}}$, $\Lambda_{\mathrm{ren}}$ (the $a_0$
+term does contribute to the metric equation) and the dimension-six coefficients are independent
+renormalized inputs.
 
-## Changes in this version (1.3)
-
-Major corrective revision. Withdrawn or corrected:
-
-- **Metric variation** was wrong by a factor $-2$: the correct result is $2\tau_{\mu\nu}$, not
-  $-4\,\mathrm{Tr}(F_{\mu\rho}F_\nu{}^\rho) + g_{\mu\nu}\mathrm{Tr}(F^2)$.
-- **$8\pi G_N = c_{\mathrm{YM}}/c_{\mathrm{EH}}$ withdrawn**: the physical $T^{\mathrm{YM}}$
-  already contains $g_{\mathrm{YM}}^{-2}$; $G_N$ and $g_{\mathrm{YM}}$ are independent matching data.
-- **$a_0$**: the claim that it does not vary was false; it is retained as $\Lambda_{\mathrm{ren}}$.
-- **$a_6$ section replaced by a cautious inventory**: in four dimensions $a_6$ is *not*
-  logarithmically divergent; the pure-gauge invariant is $\mathrm{tr}_\rho(F^3)$, not $\Omega^4$
-  (which belongs to $a_8$); several independent $RF^2$-type and derivative invariants occur, so no
-  unique cross-term is claimed; the previously displayed $[R^{\mu\nu\rho\sigma},F_{\rho\sigma}]$
-  is identically zero, the Riemann tensor being a gauge scalar.
-- **Eddington--Born--Infeld theorem withdrawn**: the determinant construction was dimensionally
-  and algebraically invalid (false Pfaffian identification, wrong semidefinite sign of $F_{\mu\rho}F^\rho{}_\nu$,
-  $\ell^2 M$ where dimensions require $\ell^4 M$, inhomogeneous $R + \kappa F^2$, unproven upper bound).
-- **Quantitative hierarchy withdrawn**: contradicted Gravity 3.3.1 and Q12 1.3.
-- **Obsolete full horizontal--vertical operator split removed**, aligning with Q12 1.3.
-- Production: fixed the table overflow and the empty PDF metadata; removed the stale
-  `version` field from `zenodo.json`.
+**$a_6$**: inventory only. In four dimensions $a_6$ produces no ultraviolet divergence; the
+pure-gauge invariant at this order is $\mathrm{tr}_\rho(F^3)$; several independent $RF^2$-type and
+derivative invariants occur, so no unique cross-term is singled out.
 
 ## Status
 

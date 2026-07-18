@@ -58,28 +58,30 @@ from Projective Spectral Entropy}
     horizontal $a_2$ response and the local Yang--Mills equations as the vertical $a_4$ response
     of the projective spectral entropy functional
     $S_\Pi[g,A] = \tfrac{1}{2}\log\det' \mathcal{A}_{g,A}$.
-    The present paper joins the two variations within a single renormalized local action.
-    Its robust content is a \emph{conditional} Einstein--Yang--Mills system: varying the common
-    matched action with respect to the connection at fixed metric gives $D_\mu F^{a\mu\nu} = 0$,
-    while varying the same $\mathrm{tr}_\rho(F^2)$ term with respect to the metric gives exactly
-    the Yang--Mills stress tensor, through
-    $(1/\sqrt{g})\,\delta \!\int\!\sqrt{g}\,\mathrm{tr}_\rho(F^2)/\delta g^{\mu\nu}
+    The present paper joins the two variations within a single renormalized local action and
+    establishes a \emph{conditional} Einstein--Yang--Mills system.
+    Varying the matched action with respect to the connection at fixed metric gives
+    $D_\mu F^{a\mu\nu} = 0$; varying the same $\mathrm{tr}_\rho(F^2)$ term with respect to the
+    metric gives its energy--momentum tensor, through
+    $(1/\sqrt{g})\,\delta\!\int\!\sqrt{g}\,\mathrm{tr}_\rho(F^2)/\delta g^{\mu\nu}
      = 2\tau_{\mu\nu}$ with
     $\tau_{\mu\nu} = \mathrm{tr}_\rho(F_{\mu\rho}F_\nu{}^\rho - \tfrac14 g_{\mu\nu}F^2)$.
-    Once the two Wilson coefficients are matched canonically,
-    $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and $c_F = 1/(4g_{\mathrm{YM}}^2)$, the standard equation
-    $G_{\mu\nu} = 8\pi G_N T^{\mathrm{YM}}_{\mu\nu}$ is recovered \emph{by definition} of
-    $T^{\mathrm{YM}}$. Accordingly $c_{\mathrm{YM}}/c_{\mathrm{EH}}$ is not $8\pi G_N$ and is not
-    a prediction: $G_N$ and $g_{\mathrm{YM}}$ remain two independent renormalized matching data.
-    The cosmological $a_0$ term does contribute to the metric equation and is retained.
-    The $a_6$ sector is given only as a cautious inventory: in four dimensions it is not
-    logarithmically divergent, it contains $\Omega^3$ (not $\Omega^4$, which belongs to $a_8$)
-    together with several independent $R\,F^2$-type and derivative invariants, so no unique
-    cross-term is claimed and its Wilson coefficients are left explicitly conditional.
-    The Eddington--Born--Infeld section of the previous version is withdrawn: its determinant
-    construction was dimensionally and algebraically invalid, and no replacement is asserted here.
-    No numerical gauge--gravity hierarchy is claimed; what is structural is only the qualitative
-    difference in ultraviolet divergence degree, quadratic at $a_2$ and logarithmic at $a_4$.
+    Since $\mathrm{tr}_\rho(F^2) = I_\rho\,F^a_{\mu\nu}F^{a\,\mu\nu}$, canonical matching fixes
+    the products $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and
+    $c_F I_\rho = 1/(4g_{\mathrm{YM}}^2)$, where $I_\rho$ is the Dynkin index of the fibre
+    representation; the Einstein equation with Yang--Mills source then holds \emph{by definition}
+    of $T^{\mathrm{YM}}$, with $8\pi G_N = 1/(2c_{\mathrm{EH}})$ depending on the Einstein
+    coefficient alone.
+    Nothing here predicts a coupling: $G_N$, $g_{\mathrm{YM}}$ and the cosmological coefficient
+    $\Lambda_{\mathrm{ren}}$, which does contribute to the metric equation, are independent
+    renormalized matching data.
+    The derivation is Euclidean, and identifying the result with the Lorentzian
+    Einstein--Yang--Mills equations requires a continuation not performed here.
+    For the $a_6$ sector we give only an inventory of the independent invariants that can occur:
+    in four dimensions $a_6$ produces no ultraviolet divergence, and the renormalized
+    dimension-six coefficients are themselves matching data.
+    Statements about $\Lambda^4$, $\Lambda^2$ and $\log\Lambda$ behaviour refer specifically to a
+    proper-time cutoff and are not scheme-independent.
     The gauge group $G_\Pi$ is taken as input from the spectral admissibility sub-programme.
     \emph{Interpretive status.} The reading of gravity and gauge dynamics as \emph{stratified by
     Seeley--DeWitt order} rather than unified by an enlarged symmetry group is offered as an
@@ -90,6 +92,7 @@ from Projective Spectral Entropy}
   Seeley--DeWitt expansion, spectral entropy functional, Yang--Mills stress tensor,
   renormalization matching, non-injective projection, admissible bundle.
 
+  \clearpage
   \tableofcontents
 
   \clearpage
@@ -130,46 +133,40 @@ from Projective Spectral Entropy}
     \subsection{Main results}
       \label{ssec:main}
 
-      The present paper delivers the following, and explicitly withdraws two claims made in
-      earlier versions:
+      The present paper delivers two things:
 
       \begin{enumerate}
-        \item \textbf{Conditional joint variational problem.}
-        We vary a single renormalized local action with respect to both $g$ and $A$ and obtain
-        the coupled Einstein--Yang--Mills system, with the Yang--Mills stress tensor arising from
-        the metric dependence of the matched $\mathrm{tr}_\rho(F^2)$ term
+        \item \textbf{A conditional joint variational result.}
+        Varying a single renormalized local action with respect to both $g$ and $A$ gives the
+        coupled Einstein--Yang--Mills system, the Yang--Mills energy--momentum tensor arising
+        from the metric dependence of the matched $\mathrm{tr}_\rho(F^2)$ term
         (Theorem~\ref{thm:EYM}). The normalisation is fixed by canonical matching, not predicted:
-        $G_N$ and $g_{\mathrm{YM}}$ are independent renormalized data
-        (Remark~\ref{rem:no-prediction}).
+        $G_N$, $g_{\mathrm{YM}}$ and $\Lambda_{\mathrm{ren}}$ are independent renormalized data
+        (Remark~\ref{rem:no-prediction}), and the result is stated in Euclidean signature
+        (Remark~\ref{rem:signature}).
 
-        \item \textbf{Cautious $a_6$ inventory.}
-        We list the independent gauge--gravity invariants that can occur at order $a_6$ and
-        record what is \emph{not} determined by the present analysis: in four dimensions $a_6$ is
-        not logarithmically divergent, and no unique cross-term is computed here
-        (Section~\ref{sec:a6}).
-
-        \item \textbf{Withdrawal of the Eddington--Born--Infeld theorem.}
-        The EBI construction of the previous version is withdrawn as dimensionally and
-        algebraically invalid; no replacement is asserted (Section~\ref{sec:EBI}).
-
-        \item \textbf{Withdrawal of the quantitative hierarchy.}
-        The numerical bound previously claimed for $G_N g^2_{YM}$ is withdrawn: both couplings
-        are matching data, so their ratio is not an output of the construction
-        (Section~\ref{sec:hierarchy}).
+        \item \textbf{An inventory of the $a_6$ sector.}
+        We list the independent gauge--gravity invariants that can occur at order $a_6$, and
+        delimit what is \emph{not} determined: in four dimensions $a_6$ produces no ultraviolet
+        divergence, the renormalized dimension-six coefficients are matching data, and no unique
+        cross-term is singled out (Section~\ref{sec:a6}).
       \end{enumerate}
+
+      No non-linear completion of the joint functional and no numerical value for the ratio
+      $G_N g_{\mathrm{YM}}^2$ are claimed; both are listed among the open points
+      (Section~\ref{ssec:open}).
 
     \subsection{Organisation}
       \label{ssec:org}
 
-      Section~\ref{sec:joint} states the joint functional and the fixed-metric variational
-      structure inherited from Q12.
+      Section~\ref{sec:joint} states the joint functional, fixes the heat-kernel convention and
+      the regularization scheme, and recalls the fixed-metric variational structure inherited
+      from Q12.
       Section~\ref{sec:EYM} derives the conditional Einstein--Yang--Mills system and its
       matching normalisation.
-      Section~\ref{sec:a6} gives the cautious $a_6$ inventory.
-      Section~\ref{sec:EBI} records the withdrawal of the Eddington--Born--Infeld theorem.
-      Section~\ref{sec:hierarchy} records the withdrawal of the quantitative hierarchy.
-      Section~\ref{sec:epistemic} discusses the epistemic status and analytical
-      status of [H-color].
+      Section~\ref{sec:a6} gives the $a_6$ inventory.
+      Section~\ref{sec:epistemic} discusses the epistemic status and the analytical
+      status of [H-color], and lists the open points.
       Section~\ref{sec:conclusion} concludes.
 
       \clearpage
@@ -196,17 +193,14 @@ from Projective Spectral Entropy}
       \]
       where $E\in\Gamma(\mathrm{End}\,E)$ is the endomorphism determined by the admissibility
       structure.
-      Lemma~1 of Q12~\cite{Beau2026q12}, in its corrected form, states only that under minimal
-      coupling the coefficient $a_2$ is independent of $A$, so that the \emph{vertical} variation
-      at fixed metric isolates the Yang--Mills sector.
+      Lemma~1 of Q12~\cite{Beau2026q12} states that under minimal coupling the coefficient $a_2$
+      is independent of $A$, so that the \emph{vertical} variation at fixed metric isolates the
+      Yang--Mills sector.
       It does \emph{not} assert a full horizontal--vertical decoupling: the metric variation of
       the $a_4$ gauge term is precisely the Yang--Mills stress tensor, an $a_4$-order
       back-reaction which is the subject of Section~\ref{sec:EYM}.
-      Accordingly we do not use any operator split of the form
-      $\mathcal{A}_g^{\mathrm{hor}}\otimes\mathrm{Id}_V
-      + \mathrm{Id}_{\mathcal{H}}\otimes\mathcal{A}_A^{\mathrm{vert}}
-      + \mathcal{A}^{\mathrm{mix}}$; such a split was assumed in earlier versions of this paper
-      and is withdrawn.
+      No operator split of $\mathcal{A}_{g,A}$ into horizontal, vertical and mixed pieces is used
+      anywhere below.
       The spectral entropy functional is then:
       \[
         S_\Pi[g,A] = \tfrac{1}{2}\mathrm{Tr}\log\mathcal{A}_{g,A}
@@ -218,17 +212,48 @@ from Projective Spectral Entropy}
     \subsection{Seeley--DeWitt expansion of the joint functional}
       \label{ssec:SDW}
 
-      The heat-kernel expansion of $\mathcal{A}_{g,A}$ gives~\cite{Vassilevich2003,ParkerToms2009}:
+      We adopt throughout the convention of Q12~\cite{Beau2026q12}, in which the factor
+      $(4\pi)^{-2}$ sits once in the heat-kernel prefactor and is not repeated inside any
+      coefficient:
       \begin{equation}
         \mathrm{Tr}\,e^{-t\mathcal{A}_{g,A}}
         \;\sim\;
-        \sum_{k=0}^\infty a_{2k}[\mathcal{A}_{g,A}]\,t^{(2k-4)/2}
+        (4\pi t)^{-2}\sum_{k=0}^\infty a_{2k}[\mathcal{A}_{g,A}]\,t^{k}
         \quad (t\to 0^+),
         \label{eq:heat-kernel}
       \end{equation}
       where the Seeley--DeWitt coefficients $a_{2k}$ are local integrals of
-      $g$, $A$, and their covariant derivatives.
-      After renormalization of the UV-divergent terms, the functional decomposes as:
+      $g$, $A$, and their covariant derivatives:
+      \begin{align}
+        a_0 &= \int_M \mathrm{tr}(\mathrm{Id}_V)\,\sqrt{g}\,d^4x,
+        \label{eq:a0}
+        \\[4pt]
+        a_2[g]
+        &= \int_M \frac{R}{6}\,\mathrm{tr}(\mathrm{Id}_V)\,\sqrt{g}\,d^4x,
+        \label{eq:a2}
+        \\[4pt]
+        a_4[g,A]
+        &= \int_M
+        \Bigl[
+          \alpha_1 R^2 + \alpha_2 R_{\mu\nu}R^{\mu\nu}
+          + \alpha_3 R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+          + \tfrac{1}{12}\mathrm{tr}_\rho(F_{\mu\nu}F^{\mu\nu})
+          \Bigr]\sqrt{g}\,d^4x,
+        \label{eq:a4}
+      \end{align}
+      with $\mathrm{tr}_\rho$ the trace in the fibre representation $\rho$, the gauge component
+      $\Omega^{\mathrm{gauge}}_{\mu\nu} = F_{\mu\nu}$ isolated from the total bundle curvature as
+      in Q12~\cite{Beau2026q12} (the total $\Omega$ also carries the spin-connection curvature,
+      which feeds the purely gravitational invariants), and $\alpha_1,\alpha_2,\alpha_3$
+      numerical coefficients~\cite{Vassilevich2003}.
+      The term $\tfrac{1}{12}\mathrm{tr}_\rho(F^2)$ is the unique gauge-invariant $a_4$
+      contribution quadratic in the gauge curvature; its normalisation depends on the
+      representation through the Dynkin index $I_\rho$ and is therefore not universal.
+
+      \paragraph{Regularization scheme.}
+      The two schemes used in this programme must not be conflated~\cite{Beau2026h}.
+      In a \emph{proper-time cutoff} at scale $\Lambda$, the small-$t$ region generates power
+      divergences and the functional organises as
       \begin{align}
         S_\Pi[g,A]
         &= c_{(0)}\Lambda^4 a_0
@@ -239,41 +264,22 @@ from Projective Spectral Entropy}
         \;+\;
         S_\Pi^{\mathrm{fin}}[g,A]
         \;+\;
-        O\!\left(\frac{1}{\Lambda^2}\right),
+        O\!\left(\Lambda^{-2}\right),
         \label{eq:SDW-expansion}
       \end{align}
-      where $S_\Pi^{\mathrm{fin}}$ is the finite part at the renormalization scale $\mu$.
-      The $a_0$ sector is \emph{not} inert. With
-      $a_0 = \int_M \mathrm{tr}(\mathrm{Id}_V)\sqrt{g}\,d^4x$ and
-      $\delta\sqrt{g}/\delta g^{\mu\nu} = -\tfrac12\sqrt{g}\,g_{\mu\nu}$, it contributes a
-      cosmological term proportional to $g_{\mu\nu}$ in the metric equation.
-      (Earlier versions of this paper asserted that $a_0$ does not contribute to the equations of
-      motion; that assertion was incorrect and is withdrawn.)
-      Its renormalized coefficient is a further matching datum, written $\Lambda_{\mathrm{ren}}$
-      below, and is not predicted here.
-      The remaining sectors used in this paper are:
-      \begin{align}
-        a_2[g]
-        &= \frac{1}{16\pi^2}\int_M \frac{R}{6}\,\mathrm{tr}(\mathrm{Id}_V)\,\sqrt{g}\,d^4x,
-        \label{eq:a2}
-        \\[4pt]
-        a_4[g,A]
-        &= \frac{1}{16\pi^2}\int_M
-        \Bigl[
-          \alpha_1 R^2 + \alpha_2 R_{\mu\nu}R^{\mu\nu}
-          + \alpha_3 R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
-          + \tfrac{1}{12}\mathrm{tr}_\rho(F_{\mu\nu}F^{\mu\nu})
-          \Bigr]\sqrt{g}\,d^4x,
-        \label{eq:a4}
-      \end{align}
-      where $\mathrm{tr}_\rho$ is the trace in the fibre representation $\rho$, the gauge
-      component $\Omega^{\mathrm{gauge}}_{\mu\nu} = F_{\mu\nu}$ has been isolated from the total
-      bundle curvature as in Q12~\cite{Beau2026q12} (the total $\Omega$ also carries the
-      spin-connection curvature, which feeds the purely gravitational invariants), and
-      $\alpha_1,\alpha_2,\alpha_3$ are numerical coefficients~\cite{Vassilevich2003}.
-      The term $\tfrac{1}{12}\mathrm{tr}_\rho(F^2)$ is the unique gauge-invariant $a_4$
-      contribution quadratic in the gauge curvature; its normalisation depends on the
-      representation through the Dynkin index $I_\rho$ and is therefore not universal.
+      with $S_\Pi^{\mathrm{fin}}$ the finite part at the renormalization scale $\mu$.
+      By contrast, the zeta-regularized determinant carries no power divergences at all: it
+      returns a finite result together with the $\log\mu$ ambiguity governed by $\zeta_A(0)=a_4$.
+      Equation~\eqref{eq:SDW-expansion}, and every statement below about $\Lambda^4$, $\Lambda^2$
+      or $\log\Lambda$ behaviour, therefore belongs specifically to the proper-time scheme and is
+      \emph{not} scheme-independent.
+      What is common to both schemes is only that the gauge sector enters at $a_4$ and the
+      Einstein sector at $a_2$.
+
+      The $a_0$ sector contributes to the equations of motion: since
+      $\delta\sqrt{g}/\delta g^{\mu\nu} = -\tfrac12\sqrt{g}\,g_{\mu\nu}$, it yields a term
+      proportional to $g_{\mu\nu}$ in the metric equation.
+      Its renormalized coefficient is a matching datum, written $\Lambda_{\mathrm{ren}}$ below.
 
   \section{Joint Einstein--Yang--Mills equations of motion}
     \label{sec:EYM}
@@ -331,14 +337,6 @@ from Projective Spectral Entropy}
         \]
       \end{proof}
 
-      \begin{remark}[Correction of the previous normalisation]
-        \label{rem:factor}
-        Earlier versions of this paper displayed
-        $-4\,\mathrm{Tr}(F_{\mu\rho}F_\nu{}^\rho) + g_{\mu\nu}\mathrm{Tr}(F^2)$
-        for this variation, i.e.\ $-2\tau_{\mu\nu}$. That expression was wrong by a factor
-        $-2$; the correct result is $2\tau_{\mu\nu}$ as above.
-      \end{remark}
-
     \subsection{Gauge-field variation}
       \label{ssec:gauge-var}
 
@@ -380,17 +378,32 @@ from Projective Spectral Entropy}
           &= 0,
           \label{eq:YM}
         \end{align}
-        where, by the canonical matching conventions
+        where the canonical matching conventions are taken component-wise. Since
+        $\mathrm{tr}_\rho(F_{\mu\nu}F^{\mu\nu}) = I_\rho\,F^a_{\mu\nu}F^{a\,\mu\nu}$ with
+        $I_\rho$ the Dynkin index of $\rho$, matching the canonically normalized gauge kinetic
+        term fixes the \emph{product}
         \[
           c_{\mathrm{EH}} \;=\; \frac{1}{16\pi G_N},
           \qquad
-          c_F \;=\; \frac{1}{4g_{\mathrm{YM}}^2},
+          c_F\,I_\rho \;=\; \frac{1}{4g_{\mathrm{YM}}^2},
         \]
-        one has $8\pi G_N = 1/(2c_{\mathrm{EH}})$ and
+        so that $8\pi G_N = 1/(2c_{\mathrm{EH}})$ and
         $\Lambda_{\mathrm{eff}} = \Lambda_{\mathrm{ren}}/(2c_{\mathrm{EH}})$.
         The system is \emph{conditional}: it holds given the matched coefficients, which are
         renormalization data supplied from outside the expansion.
       \end{theorem}
+
+      \begin{remark}[Signature and sign conventions]
+        \label{rem:signature}
+        The derivation is Euclidean, and $T^{\mathrm{YM}}_{\mu\nu}$ is \emph{defined} above by
+        the stated variational convention, $T^{\mathrm{YM}}_{\mu\nu} = -4c_F\tau_{\mu\nu}$.
+        Equation~\eqref{eq:Einstein-YM} therefore has the form of the Einstein--Yang--Mills
+        system in that convention; identifying it with the Lorentzian Einstein--Yang--Mills
+        equations of physics requires a continuation to Lorentzian signature, under which the
+        relative sign between the curvature and source terms and the positivity of the
+        Yang--Mills energy density must be re-derived rather than assumed.
+        That continuation is not carried out here (Section~\ref{ssec:open}).
+      \end{remark}
 
       \begin{proof}
         Vary~\eqref{eq:ren-action} term by term.
@@ -415,20 +428,15 @@ from Projective Spectral Entropy}
 
       \begin{remark}[The normalisation is matching, not prediction]
         \label{rem:no-prediction}
-        Equation~\eqref{eq:Einstein-YM} is recovered \emph{by definition} of
+        Equation~\eqref{eq:Einstein-YM} holds \emph{by definition} of
         $T^{\mathrm{YM}}_{\mu\nu}$, whose normalisation already contains $g_{\mathrm{YM}}^{-2}$
-        through $c_F$. In particular
-        \[
-          8\pi G_N \;=\; \frac{1}{2c_{\mathrm{EH}}}
-          \qquad\text{and not}\qquad
-          8\pi G_N \;=\; \frac{c_{\mathrm{YM}}}{c_{\mathrm{EH}}},
-        \]
-        the latter identification --- asserted in earlier versions of this paper --- being
-        incorrect, since it mixes the gauge-action prefactor with the definition of the stress
-        tensor. Nothing in the construction predicts either constant: $G_N$ and
-        $g_{\mathrm{YM}}$ are two \emph{independent} renormalized matching data, in accordance
-        with Gravity~3.3.1~\cite{Beau2026h} and Q12~1.3~\cite{Beau2026q12}. The spectral
-        expansion fixes only the degree of ultraviolet divergence of each coefficient.
+        through $c_F I_\rho$; the gravitational coupling enters only through
+        $8\pi G_N = 1/(2c_{\mathrm{EH}})$, that is, through the Einstein coefficient alone.
+        Nothing in the construction predicts either constant: $G_N$ and $g_{\mathrm{YM}}$ are two
+        \emph{independent} renormalized matching data, in accordance with
+        Gravity~\cite{Beau2026h} and Q12~\cite{Beau2026q12}.
+        In the proper-time scheme of~\eqref{eq:SDW-expansion} the spectral expansion fixes the
+        degree of ultraviolet divergence of each coefficient, and nothing more.
       \end{remark}
 
   \section{The \texorpdfstring{$a_6$}{a6} sector: a cautious inventory}
@@ -437,13 +445,17 @@ from Projective Spectral Entropy}
     \subsection{Divergence degree of \texorpdfstring{$a_6$}{a6} in four dimensions}
       \label{ssec:a6-degree}
 
-      In the normalisation of~\eqref{eq:heat-kernel}, $a_{2k}$ multiplies $t^{(2k-4)/2}$, so in
-      four dimensions $a_6$ carries $t^{+1}$.
-      It is therefore \emph{not} ultraviolet divergent: the logarithm sits at the $t^0$
-      coefficient $a_4$, while $a_6$ contributes a finite, inverse-cutoff-suppressed correction
-      of relative order $\ell_{\mathrm{sp}}^2$.
-      Earlier versions of this paper attached a factor $\log(\Lambda/\mu)$ to the $a_6$
-      corrections; that is incorrect and is withdrawn.
+      In the convention~\eqref{eq:heat-kernel}, the $a_6$ coefficient enters with a positive power
+      of the proper time. In four dimensions it therefore produces no ultraviolet divergence: the
+      logarithm sits at $a_4$, and in the proper-time scheme of~\eqref{eq:SDW-expansion} the
+      $a_6$ sector appears only inside the cutoff-dependent remainder $O(\Lambda^{-2})$.
+
+      This must not be confused with the size of the corresponding term in the effective action.
+      The remainder that is $O(\Lambda^{-2})$ is the \emph{cutoff-dependent} part; the
+      renormalized local coefficient of each dimension-six operator survives the removal of the
+      cutoff and is an independent matching datum, on the same footing as $c_{\mathrm{EH}}$ and
+      $c_F$. In particular it is not determined by, and must not be identified with,
+      $\ell_{\mathrm{sp}}^2$.
 
     \subsection{Which invariants can occur}
       \label{ssec:a6-inventory}
@@ -466,16 +478,14 @@ from Projective Spectral Entropy}
         \mathrm{tr}_\rho(D_\mu F^{\mu\nu}\,D^\rho F_{\rho\nu}),
         \label{eq:a6-inventory}
       \end{align}
-      each with its own coefficient. Two corrections to the previous version are recorded:
+      each with its own independent coefficient. Two structural points follow.
       \begin{enumerate}
         \item The pure-gauge invariant at this order is \emph{cubic},
-        $\mathrm{tr}_\rho(F^3)$, not quartic. A term $\mathrm{tr}_\rho(\Omega^4)$ has derivative
-        order eight and belongs to $a_8$, not to $a_6$; its appearance in~$a_6$ in earlier
-        versions was an error.
+        $\mathrm{tr}_\rho(F^3)$. A quartic term $\mathrm{tr}_\rho(\Omega^4)$ has derivative order
+        eight and belongs to $a_8$, not to $a_6$.
         \item There is no single ``leading cross-coupling''. The three mixed invariants
-        in~\eqref{eq:a6-inventory} are independent, and singling out
-        $R_{\mu\nu\rho\sigma}\mathrm{tr}_\rho(F^{\mu\nu}F^{\rho\sigma})$ as \emph{the}
-        cross-term is not justified by the present analysis.
+        in~\eqref{eq:a6-inventory} are independent, so none of them can be singled out as
+        \emph{the} gauge--gravity cross-term on the strength of the present analysis.
       \end{enumerate}
 
     \subsection{What is not determined here}
@@ -486,91 +496,16 @@ from Projective Spectral Entropy}
       Seeley--DeWitt computation for $\mathcal{A}_{g,A}$ or by matching. Consequently no $a_6$
       correction to the equations of motion is asserted in this paper.
 
-      \begin{remark}[An impossible commutator]
+      \begin{remark}[Form of a mixed contribution to the connection equation]
         \label{rem:no-commutator}
-        Earlier versions displayed an $a_6$ correction to the Yang--Mills equation of the form
-        $[R^{\mu\nu\rho\sigma},F_{\rho\sigma}]$. This expression is identically zero and cannot
-        occur: the Riemann tensor is a scalar in the gauge algebra (it multiplies the identity on
-        the gauge factor of the bundle), so it commutes with every Lie-algebra-valued field.
-        A genuine mixed contribution to the connection equation takes instead the form
+        A mixed $a_6$ contribution to the Yang--Mills equation cannot take a commutator form
+        $[R^{\mu\nu\rho\sigma},F_{\rho\sigma}]$: the Riemann tensor is a scalar in the gauge
+        algebra --- it multiplies the identity on the gauge factor of the bundle --- so any such
+        commutator vanishes identically.
+        A genuine mixed contribution takes instead the form
         $\nabla_\mu\!\left(R^{\mu\nu\rho\sigma}F_{\rho\sigma}\right)$ and similar
         curvature-weighted divergences, with coefficients not determined here.
       \end{remark}
-
-  \section{Withdrawal of the Eddington--Born--Infeld construction}
-    \label{sec:EBI}
-
-    The previous version of this paper contained a gauge-sector Born--Infeld Lagrangian, a joint
-    Eddington--Born--Infeld functional, and a theorem asserting that the latter recovers the joint
-    equations at leading order and is bounded above.
-    That construction is \emph{withdrawn}. It fails on several independent counts, each fatal on
-    its own:
-
-    \begin{enumerate}
-      \item \textbf{The Pfaffian claim is false.} It was asserted that
-      $\sqrt{\det(\delta^\mu_\nu + \ell_{\mathrm{sp}}^2 F^\mu{}_\nu)}$ equals the Pfaffian of $F$
-      and can change sign in Euclidean signature. For real antisymmetric $F$ the eigenvalues occur
-      in pairs $\pm i\lambda_j$, so
-      $\det(I + \ell_{\mathrm{sp}}^2 F) = \prod_j\bigl(1+\ell_{\mathrm{sp}}^4\lambda_j^2\bigr)
-      \geq 1 > 0$:
-      the determinant is manifestly positive, and it is not the Pfaffian of $F$.
-      \item \textbf{The proposed replacement has the opposite sign.} The combination
-      $M_{\mu\nu} = F_{\mu\rho}F^{\rho}{}_{\nu}$ was described as positive semidefinite. For
-      antisymmetric $F$, $M = -FF^{\mathsf{T}}$ is negative semidefinite.
-      \item \textbf{The powers of $\ell_{\mathrm{sp}}$ are inconsistent.} $M$ is quadratic in the
-      field strength, so a dimensionless matrix argument requires $\ell_{\mathrm{sp}}^4 M$, not
-      $\ell_{\mathrm{sp}}^2 M$; the expansion given in the proof changed the power between the
-      statement and its conclusion.
-      \item \textbf{The joint tensor is dimensionally inhomogeneous.} With
-      $\kappa^2 = 8\pi G_N$, the terms $R_{\mu\nu}$ and $\kappa F_{\mu\rho}F^{\rho}{}_{\nu}$ do
-      not carry the same dimension, so the sum $R_{\mu\nu} + \kappa F^2_{\mu\nu}$ is not defined.
-      \item \textbf{The boundedness property does not follow.} The claimed upper bound was
-      derived from $|\det(I+X)| \leq e^{\mathrm{tr}X}$, an inequality valid for positive
-      semidefinite $X$ and not applicable here; no fixed upper bound follows, and the asserted
-      one is false in general.
-    \end{enumerate}
-
-    No replacement completion is asserted in this paper. Whether the admissibility saturation
-    bound $c_{\mathrm{BI}}$~\cite{Beau2026c} induces a well-defined non-linear completion of the
-    joint functional is left open, to be rebuilt independently if at all.
-
-
-  \section{Withdrawal of the quantitative hierarchy}
-    \label{sec:hierarchy}
-
-    Earlier versions of this paper stated a proposition asserting
-    \[
-      G_N\,g_{\mathrm{YM}}^2
-      \;=\;
-      \frac{12\,\ell_{\mathrm{sp}}^2}{\dim V}\cdot\Bigl[\log\frac{\Lambda}{\mu}\Bigr]^{-1}
-      \;\ll\;1
-    \]
-    as a structural output requiring no fine-tuning, on the strength of explicit induced values
-    $G_N^{-1} \sim \ell_{\mathrm{sp}}^{-2}$ and
-    $g_{\mathrm{YM}}^{-2} \sim \log(\Lambda/\mu)$.
-    That proposition is \emph{withdrawn}, together with the explicit coupling values it rests on.
-
-    Two independent reasons make it untenable. First, it contradicts the corrected companion
-    results: Gravity~3.3.1~\cite{Beau2026h} establishes that the renormalized Einstein
-    coefficient, hence $G_N$, is a matching datum whose value and sign are fixed by
-    renormalization conditions rather than predicted, and Q12~1.3~\cite{Beau2026q12} establishes
-    the same for $g_{\mathrm{YM}}$, of which only the logarithmic running is calculable and whose
-    coefficient is representation-dependent through the Dynkin index $I_\rho$. A ratio of two
-    quantities that are each matching data is itself a matching datum, not an output. Second, the
-    derivation used the coefficient identification corrected in
-    Remark~\ref{rem:no-prediction}.
-
-    What survives is qualitative and scheme-independent: the two sectors sit at different orders
-    of the heat-kernel expansion and therefore carry different degrees of ultraviolet divergence,
-    \begin{equation}
-      a_2 \;\longrightarrow\; \text{gravity, quadratic},
-      \qquad
-      a_4 \;\longrightarrow\; \text{gauge, logarithmic}.
-      \label{eq:divergence-degrees}
-    \end{equation}
-    This difference in divergence degree is a genuine structural feature of the expansion. It
-    does not, by itself, determine the finite renormalized couplings, and no numerical value or
-    bound for $G_N g_{\mathrm{YM}}^2$ is claimed here.
 
   \section{Epistemic status}
     \label{sec:epistemic}
@@ -582,43 +517,33 @@ from Projective Spectral Entropy}
 
       \begin{table}[h]
         \centering
-        \renewcommand{\arraystretch}{1.25}
-        \begin{tabularx}{\textwidth}{@{}p{0.30\textwidth}p{0.24\textwidth}X@{}}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.33\textwidth}X@{}}
           \toprule
-          Result & Status & Dependence \\
+          Result & Status and dependence \\
           \midrule
+          Metric variation
           $\delta_g\!\int\!\sqrt{g}\,\mathrm{tr}_\rho(F^2) = 2\tau_{\mu\nu}$
           (Lemma~\ref{lem:YM-stress})
-          & Theorem-level
-          & $F_{\mu\nu}$ metric-independent with indices down \\
+          & Theorem-level; uses only that $F_{\mu\nu}$ with indices down is
+          metric-independent \\
           Conditional EYM system (Theorem~\ref{thm:EYM})
-          & Theorem-level, conditional on matching
-          & Lemma~\ref{lem:YM-stress} \\
-          $8\pi G_N = 1/(2c_{\mathrm{EH}})$, not $c_{\mathrm{YM}}/c_{\mathrm{EH}}$
-          (Remark~\ref{rem:no-prediction})
-          & Definitional (matching)
-          & \cite{Beau2026h,Beau2026q12} \\
-          Values of $G_N$, $g_{\mathrm{YM}}$, $\Lambda_{\mathrm{ren}}$
-          & Independent renormalized data (not predicted)
-          & --- \\
+          & Theorem-level, conditional on the matched coefficients; Euclidean signature
+          (Remark~\ref{rem:signature}) \\
+          $8\pi G_N = 1/(2c_{\mathrm{EH}})$, with
+          $c_F I_\rho = 1/(4g_{\mathrm{YM}}^2)$
+          & Definitional, fixed by canonical matching~\cite{Beau2026h,Beau2026q12} \\
+          Values of $G_N$, $g_{\mathrm{YM}}$, $\Lambda_{\mathrm{ren}}$ and of the
+          dimension-six coefficients
+          & Independent renormalized matching data; not predicted here \\
           $a_6$ invariant inventory (Section~\ref{sec:a6})
-          & Inventory only; coefficients conditional
-          & \cite{Vassilevich2003} \\
-          $a_6$ logarithmically divergent in $d=4$
-          & Withdrawn (false: $a_6 \propto t^{+1}$)
-          & --- \\
-          EBI completion
-          & Withdrawn (Section~\ref{sec:EBI})
-          & --- \\
-          Numerical hierarchy $G_N g_{\mathrm{YM}}^2$
-          & Withdrawn (Section~\ref{sec:hierarchy})
-          & --- \\
-          Divergence degrees $a_2$ quadratic / $a_4$ logarithmic
-          & Structural
-          & \cite{Vassilevich2003} \\
+          & Inventory only; individual coefficients not computed~\cite{Vassilevich2003} \\
+          Divergence degrees $a_2$ quadratic, $a_4$ logarithmic
+          & Structural \emph{within the proper-time scheme}
+          of~\eqref{eq:SDW-expansion}; not scheme-independent~\cite{Beau2026h} \\
           $G_\Pi = \mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
           & Input; $[H\text{-color}]_{\mathrm{pointwise}}$ established
-          & \cite{Beau2026a35,Beau2026a36} \\
+          in~\cite{Beau2026a35,Beau2026a36} \\
           \bottomrule
         \end{tabularx}
         \caption{Epistemic status of the main results.}
@@ -654,10 +579,10 @@ from Projective Spectral Entropy}
       \begin{enumerate}
         \item \textbf{Non-linear completion.}
         Whether the admissibility saturation bound $c_{\mathrm{BI}}$~\cite{Beau2026c} induces a
-        well-defined non-linear completion of the joint functional is open. The construction
-        attempted in earlier versions is withdrawn (Section~\ref{sec:EBI}) and would have to be
-        rebuilt from scratch, with dimensional consistency and the sign structure of $F$ checked
-        at each step.
+        well-defined non-linear completion of the joint functional is open. Any such construction
+        must be checked for dimensional homogeneity of its matrix argument and for the
+        semidefinite sign structure of $F_{\mu\rho}F^{\rho}{}_{\nu}$, both of which constrain the
+        admissible determinant forms severely.
 
         \item \textbf{Quantitative $a_6$ coefficients.}
         The coefficients of the invariants listed in~\eqref{eq:a6-inventory} are not computed
@@ -665,16 +590,19 @@ from Projective Spectral Entropy}
         $\mathcal{A}_{g,A}$, or independent matching. Until then no $a_6$ correction to the
         equations of motion is asserted.
 
-        \item \textbf{Matching data.}
-        $G_N$, $g_{\mathrm{YM}}$ and $\Lambda_{\mathrm{ren}}$ are supplied from outside the
-        expansion. Whether the admissibility structure constrains any combination of them is
-        open; the present paper establishes only that the spectral expansion does not determine
-        them individually.
+        \item \textbf{Matching data and the coupling ratio.}
+        $G_N$, $g_{\mathrm{YM}}$, $\Lambda_{\mathrm{ren}}$ and the dimension-six coefficients are
+        supplied from outside the expansion. Whether the admissibility structure constrains any
+        combination of them --- in particular the ratio $G_N g_{\mathrm{YM}}^2$ --- is open; the
+        present paper establishes only that the spectral expansion does not determine them.
 
         \item \textbf{Lorentzian continuation.}
-        All spectral derivations are performed in Euclidean signature.
-        The Lorentzian continuation is established at the level of Q5b~\cite{Beau2026q6b} for the
-        geometric sector; its extension to the gauge sector remains an open step.
+        All spectral derivations are performed in Euclidean signature, and
+        $T^{\mathrm{YM}}_{\mu\nu}$ is defined by the variational convention of
+        Theorem~\ref{thm:EYM}. The Lorentzian continuation is established at the level of
+        Q5b~\cite{Beau2026q6b} for the geometric sector; its extension to the gauge sector,
+        including the relative sign between curvature and source and the positivity of the gauge
+        energy density, remains an open step.
 
         \item \textbf{$\mathrm{SU}(3)$ Yang--Mills uniqueness.}
         The analogue of Theorem~\ref{thm:EYM} for the internal structure of
@@ -697,20 +625,20 @@ from Projective Spectral Entropy}
       gives $D_\mu F^{a\mu\nu} = 0$, and the metric variation of the same
       $\mathrm{tr}_\rho(F^2)$ term gives its energy--momentum tensor, via
       $\delta\!\int\!\sqrt{g}\,\mathrm{tr}_\rho(F^2)/\delta g^{\mu\nu} = 2\sqrt{g}\,\tau_{\mu\nu}$.
-      The gravitational and gauge sectors sit at different orders of the heat-kernel expansion
-      and therefore carry different degrees of ultraviolet divergence,
-      quadratic at $a_2$ and logarithmic at $a_4$~\eqref{eq:divergence-degrees}.
+      Within the proper-time scheme of~\eqref{eq:SDW-expansion}, the gravitational and gauge
+      sectors sit at different orders of the heat-kernel expansion and therefore carry different
+      degrees of ultraviolet divergence, quadratic at $a_2$ and logarithmic at $a_4$.
 
-    \paragraph{What is not established.}
-      The normalisation of~\eqref{eq:Einstein-YM} is matching, not prediction: after
-      $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and $c_F = 1/(4g_{\mathrm{YM}}^2)$ the equation holds by
-      definition of $T^{\mathrm{YM}}$, and $8\pi G_N = 1/(2c_{\mathrm{EH}})$ rather than
-      $c_{\mathrm{YM}}/c_{\mathrm{EH}}$ (Remark~\ref{rem:no-prediction}).
-      $G_N$, $g_{\mathrm{YM}}$ and $\Lambda_{\mathrm{ren}}$ remain independent renormalized data.
-      Three claims of earlier versions are withdrawn: the Eddington--Born--Infeld theorem
-      (Section~\ref{sec:EBI}), the numerical gauge--gravity hierarchy
-      (Section~\ref{sec:hierarchy}), and the identification of a unique logarithmically divergent
-      $a_6$ cross-coupling (Section~\ref{sec:a6}).
+    \paragraph{What the paper does not determine.}
+      The normalisation of~\eqref{eq:Einstein-YM} is matching, not prediction: with
+      $c_{\mathrm{EH}} = 1/(16\pi G_N)$ and $c_F I_\rho = 1/(4g_{\mathrm{YM}}^2)$ the equation
+      holds by definition of $T^{\mathrm{YM}}$, and $8\pi G_N = 1/(2c_{\mathrm{EH}})$ depends on
+      the Einstein coefficient alone (Remark~\ref{rem:no-prediction}).
+      $G_N$, $g_{\mathrm{YM}}$, $\Lambda_{\mathrm{ren}}$ and the dimension-six coefficients remain
+      independent renormalized data, and the ratio $G_N g_{\mathrm{YM}}^2$ is therefore not an
+      output of this construction.
+      The result is Euclidean (Remark~\ref{rem:signature}), and no non-linear completion of the
+      joint functional is proposed.
 
     \paragraph{Interpretive outlook.}
       Beyond these individually labelled results, the reading suggested by the trilogy
@@ -719,8 +647,8 @@ from Projective Spectral Entropy}
       by the Seeley--DeWitt level at which the same operator $\mathcal{A}_{g,A}$ responds to
       variation --- replacing ``what symmetry unifies gravity and gauge?'' with ``at what
       spectral order does the projection respond?''.
-      This is an interpretive outlook, not a theorem: it rests on the qualitative divergence-degree
-      separation, which is structural, and not on any of the withdrawn quantitative claims.
+      This is an interpretive outlook, not a theorem: it rests on the qualitative separation of
+      spectral orders, and not on any quantitative claim about the couplings.
       The natural continuation of the programme is the treatment of fermionic matter and
       chirality.
 
