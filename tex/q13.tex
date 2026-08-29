@@ -4,6 +4,13 @@
 \usepackage{lmodern}
 \input{glyphtounicode}
 \pdfgentounicode=1
+% The Adobe glyph list maps Delta, Omega, mu and periodcentered to the technical codepoints
+% U+2206 (INCREMENT), U+2126 (OHM SIGN), U+00B5 (MICRO SIGN) and U+00B7 (MIDDLE DOT), so the
+% deposited text layer would not be searchable as the intended characters.
+\pdfglyphtounicode{Delta}{0394}
+\pdfglyphtounicode{Omega}{03A9}
+\pdfglyphtounicode{mu}{03BC}
+\pdfglyphtounicode{periodcentered}{22C5}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{hyperref}
 \usepackage{natbib}
@@ -83,7 +90,8 @@ from Projective Spectral Entropy}
     matching data.
     Statements about $\Lambda^4$, $\Lambda^2$ and $\log\Lambda$ behaviour refer specifically to a
     proper-time cutoff and are not scheme-independent.
-    The gauge group $G_\Pi$ is taken as input from the spectral admissibility sub-programme.
+    The gauge group $G_\Pi$ is a supplied compact group: the gauge-structure sub-programme does
+    not identify it, and no result below depends on which group is supplied.
     \emph{Interpretive status.} The reading of gravity and gauge dynamics as \emph{stratified by
     Seeley--DeWitt order} rather than unified by an enlarged symmetry group is offered as an
     interpretive outlook, not a theorem.
@@ -105,9 +113,9 @@ from Projective Spectral Entropy}
 
       The Cosmochrony framework derives emergent physics from a generally non-injective
       projection $\Pi\colon\chi\to\mathcal{M}$ of a static relational substrate $\chi$.
-      Within this framework, the Q-series of papers establishes the emergence of
-      quantum structure, spacetime geometry, and gauge dynamics from the admissibility
-      structure of $\Pi$~\cite{Beau2026m,Beau2026q1,Beau2026q2}.
+      Within this framework, the Foundation paper sets out the admissibility structure
+      of $\Pi$~\cite{Beau2026m}, and the Q-series derives spectral consequences of that
+      structure~\cite{Beau2026q1,Beau2026q2}.
       The spectral entropy functional
       \[
         S_\Pi[g] = \tfrac{1}{2}\log\det'\ \mathcal{A}_g,
@@ -167,8 +175,8 @@ from Projective Spectral Entropy}
       Section~\ref{sec:EYM} derives the conditional Einstein--Yang--Mills system and its
       matching normalisation.
       Section~\ref{sec:a6} gives the $a_6$ inventory.
-      Section~\ref{sec:epistemic} discusses the epistemic status and the analytical
-      status of [H-color], and lists the open points.
+      Section~\ref{sec:epistemic} discusses the epistemic status and the status of the
+      gauge-group input, and lists the open points.
       Section~\ref{sec:conclusion} concludes.
 
       \clearpage
@@ -179,8 +187,8 @@ from Projective Spectral Entropy}
       \label{ssec:bundle}
 
       Following Q12~\cite{Beau2026q12}, let $(M,g)$ be a compact Riemannian four-manifold
-      and let $P\to M$ be a principal $G_\Pi$-bundle, where $G_\Pi$ is the admissible gauge
-      group inherited from the spectral admissibility sub-programme~\cite{Beau2026q6a}.
+      and let $P\to M$ be a principal $G_\Pi$-bundle, where $G_\Pi$ is a compact gauge group
+      supplied as an input and not fixed here (Section~\ref{ssec:Hcolor}).
       Let $E = P\times_\rho V$ be the associated vector bundle for a representation
       $\rho\colon G_\Pi\to \mathrm{GL}(V)$.
       An admissible connection $A\in\mathcal{A}(P)$ defines a covariant derivative
@@ -549,36 +557,49 @@ from Projective Spectral Entropy}
           Divergence degrees $a_2$ quadratic, $a_4$ logarithmic
           & Structural \emph{within the proper-time scheme}
           of~\eqref{eq:SDW-expansion}; not scheme-independent~\cite{Beau2026h} \\
-          $G_\Pi = \mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
-          & Input; $[H\text{-color}]_{\mathrm{pointwise}}$ established
-          in~\cite{Beau2026a35,Beau2026a36} \\
+          Identification of $G_\Pi$ with a specific compact group
+          & Not established; $G_\Pi$ is a supplied input entering only through $\rho$
+          (Section~\ref{ssec:Hcolor}) \\
           \bottomrule
         \end{tabularx}
         \caption{Epistemic status of the main results.}
         \label{tab:status}
       \end{table}
 
-    \subsection{Analytical status of [H-color]}
+    \subsection{Status of the supplied gauge group}
       \label{ssec:Hcolor}
 
-      The identification $G_\Pi = \mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
-      is taken as input from the spectral admissibility sub-programme.
-      The $\mathrm{SU}(3)$ sector is established unconditionally for the
-      colour-adapted Cayley graph in~\cite{Beau2026a35}.
-      For the standard Cayley graph, $[H\text{-color}]_{\mathrm{eff}}$
-      (equality of capacity exponents in the large-$q$ limit) is proved
-      analytically in~\cite{Beau2026a35,Beau2026a36} via the intra-coset
-      Vandermonde mechanism and the modulation-frequency argument (O32).
-      Furthermore, $[H\text{-color}]_{\mathrm{pointwise}}$ (exact equality at
-      finite~$q$) is proved in O31 (Proposition~4.23,~\cite{Beau2026a35}): each
-      O12 fingerprint vector carries a single frequency
-      $B = c_1 b_1 + c_2 b_2 + c_3 b_3$, and the orbit dilation
-      $B \mapsto \omega B$ is a bijection of $\mathbb{Z}/q\mathbb{Z}$, so
-      $\sigma_c(n) = \sigma_{\omega c}(n) = \sigma_{\omega^2 c}(n)$ holds exactly.
-      All results of the present paper are independent of these results:
-      the identification of $G_\Pi$ is an input, and it enters here only through the
-      representation $\rho$ in which the trace $\mathrm{tr}_\rho$ and the Dynkin index $I_\rho$
-      are taken.
+      $G_\Pi$ is a supplied input, and every result of this paper is independent of which group is
+      supplied: it enters only through the representation $\rho$ in which the trace
+      $\mathrm{tr}_\rho$ and the Dynkin index $I_\rho$ are taken.
+
+      No identification of $G_\Pi$ with a specific compact group is available.
+      O31~\cite{Beau2026a35} is a withdrawal notice.
+      Among the results it withdraws are the co-admissibility of the individual capacity profiles
+      $\sigma_{c_1}$, $\sigma_{c_2}$, $\sigma_{c_3}$, which is the content of
+      $[H\text{-color}]_{\mathrm{pointwise}}$ and of its Proposition~4.23; the uniqueness of
+      $\mathrm{SU}(3)$ among connected compact subgroups acting irreducibly on $\mathbb{C}^3$;
+      the irreducibility of the group of fibre-preserving transformations of the colour eigenspace;
+      the arithmetic criterion $q \equiv 1 \pmod 3$; and every derivation of a gauge factor, the
+      composite $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$, the
+      determinant-one condition, the commutation of the putative factors and the direct-product
+      structure included.
+      Three counterexamples are given there: $\mathrm{SO}(3) \subset \mathrm{SU}(3)$, a proper
+      connected compact subgroup acting irreducibly on $\mathbb{C}^3$ with determinant one; the
+      diagonal torus $T^2$, which satisfies every constraint that was imposed while acting
+      reducibly; and $\{1, 2, q-3\}$, an admissible triplet for every prime $q \geq 7$
+      irrespective of $q \bmod 3$.
+      Nothing withdrawn there is replaced by a weaker positive statement.
+
+      O32~\cite{Beau2026a36} measures the finite-$q$ residual variance of the capacity profiles.
+      Those are measurements; this paper takes no position on their interpretation and does not
+      read them as identifying a group.
+
+      Q12~\cite{Beau2026q12} likewise carries $G_\Pi$ as a supplied compact group, and
+      Q6a~\cite{Beau2026q6a} treats $\mathrm{SU}(3)$ as a structurally motivated candidate whose
+      derivation remains open.
+      The identification of $G_\Pi$ is therefore an open question of the gauge-structure
+      sub-programme, and it is used nowhere in this paper.
 
     \subsection{Open points}
       \label{ssec:open}
@@ -612,12 +633,11 @@ from Projective Spectral Entropy}
         including the relative sign between curvature and source and the positivity of the gauge
         energy density, remains an open step.
 
-        \item \textbf{$\mathrm{SU}(3)$ Yang--Mills uniqueness.}
-        The analogue of Theorem~\ref{thm:EYM} for the internal structure of
-        the $\mathrm{SU}(3)$ sector (colour charge structure, structure constants)
-        is identified as an open problem in~\cite{Beau2026a35}.
-        This is a separate question from $[H\text{-color}]_{\mathrm{eff}}$,
-        which is now proved analytically in~\cite{Beau2026a35,Beau2026a36}.
+        \item \textbf{Internal structure of a non-abelian sector.}
+        Theorem~\ref{thm:EYM} holds for any supplied compact $G_\Pi$ and says nothing about the
+        internal structure of a particular non-abelian sector --- its colour charge structure or
+        its structure constants --- nor about any principle that would single such a sector out.
+        No such derivation is available in the programme, and none is claimed here.
       \end{enumerate}
 
       \clearpage
