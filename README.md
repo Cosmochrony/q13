@@ -65,9 +65,13 @@ Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859
 
 - **Depends on**: Gravity paper ($S_\Pi[g]$ functional, $a_2$ Einstein sector),
   Q12 (Yang--Mills from $a_4$, admissible principal bundle),
-  Q6a (gauge group $G_\Pi$), Q11 (effective Lorentzian metric)
-- **SU(3) status**: $[H\text{-color}]_{\mathrm{pointwise}}$ established in O31/O32; it enters here
-  only through the representation $\rho$ in which $\mathrm{tr}_\rho$ and $I_\rho$ are taken
+  Q6a (gauge-structure sub-programme), Q11 (effective Lorentzian metric)
+- **Gauge group**: $G_\Pi$ is a supplied compact group, not identified by the gauge-structure
+  sub-programme. O31 is a withdrawal notice: it withdraws the co-admissibility of the individual
+  capacity profiles — the content of $[H\text{-color}]_{\mathrm{pointwise}}$ — and every derivation
+  of a gauge factor, the composite $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
+  included. No result here depends on which group is supplied: $G_\Pi$ enters only through the
+  representation $\rho$ in which $\mathrm{tr}_\rho$ and the Dynkin index $I_\rho$ are taken
 - **Open**: non-linear completion (to be rebuilt from scratch, if at all), quantitative $a_6$
   coefficients, whether admissibility constrains any combination of the matching data,
   Lorentzian continuation of the gauge sector
