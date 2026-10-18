@@ -74,7 +74,7 @@ Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859
   representation $\rho$ in which $\mathrm{tr}_\rho$ and the Dynkin index $I_\rho$ are taken
 - **Open**: non-linear completion (to be rebuilt from scratch, if at all), quantitative $a_6$
   coefficients, whether admissibility constrains any combination of the matching data,
-  Lorentzian continuation of the gauge sector
+  Lorentzian continuation, in the geometric sector (not established by Q5b or Q6b) and in the gauge sector
 
 ## Compilation
 
