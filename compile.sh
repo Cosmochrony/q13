@@ -8,7 +8,7 @@ set -e  # Exit on error
 # Configuration
 TEX_FILE="tex/q13.tex"
 OUTPUT_DIR="out"
-MAIN_NAME="Q13"
+MAIN_NAME="$(basename "$TEX_FILE" .tex)"
 
 # Colors for output
 RED='\033[0;31m'
@@ -48,6 +48,10 @@ for PASS in 2 3 4 5; do
         -output-directory="$OUTPUT_DIR" \
         -recorder \
         "$TEX_FILE"
+    if [ ! -f "$LOG" ]; then
+        echo -e "${RED}Log file $LOG not found${NC}"
+        exit 1
+    fi
     if [ "$PASS" -ge 3 ] && ! grep -aqE "Rerun to get|may have changed" "$LOG"; then
         break
     fi
