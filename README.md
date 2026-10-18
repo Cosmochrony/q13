@@ -65,7 +65,7 @@ Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859
 
 - **Depends on**: Gravity paper ($S_\Pi[g]$ functional, $a_2$ Einstein sector),
   Q12 (Yang--Mills from $a_4$, admissible principal bundle),
-  Q6a (gauge-structure sub-programme), Q11 (effective Lorentzian metric)
+  Q6a (gauge-structure sub-programme), Q11 (Lorentzian form only for a supplied extension; no coefficient value)
 - **Gauge group**: $G_\Pi$ is a supplied compact group, not identified by the gauge-structure
   sub-programme. O31 is a withdrawal notice: it withdraws the co-admissibility of the individual
   capacity profiles — the content of $[H\text{-color}]_{\mathrm{pointwise}}$ — and every derivation
