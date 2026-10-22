@@ -7,10 +7,11 @@ J. Beau, Independent Researcher, France
 
 ## Abstract
 
-The companion papers (Gravity, Q12) established that the projective spectral entropy
-functional $S_\Pi[g, \mathcal{A}] = \tfrac{1}{2}\log\det' A_{g,\mathcal{A}}$ produces the
-Einstein tensor as the horizontal $a_2$ response and the local Yang--Mills equations as the
-vertical $a_4$ response of the same functional.
+On a supplied Riemannian metric, the companion Gravity paper states the conditions under which the projective
+spectral entropy functional $S_\Pi[g, \mathcal{A}] = \tfrac{1}{2}\log\det' A_{g,\mathcal{A}}$ has the Einstein
+tensor as its dominant horizontal $a_2$ response (a non-zero matched Einstein coefficient and small curvature
+relative to the renormalized higher-derivative scale), and the companion Q12 paper derives the local Yang--Mills
+equations as the vertical $a_4$ response of the same functional.
 
 The present paper joins the two variations within a single renormalized local action. Its
 robust content is a **conditional** Einstein--Yang--Mills system: varying the matched action
@@ -63,7 +64,7 @@ Preprint. DOI: [10.5281/zenodo.20209859](https://doi.org/10.5281/zenodo.20209859
 
 ## Position in the Programme
 
-- **Depends on**: Gravity paper ($S_\Pi[g]$ functional, $a_2$ Einstein sector),
+- **Depends on**: Gravity paper ($S_\Pi[g]$ functional, conditions for a dominant $a_2$ Einstein term on a supplied Riemannian metric),
   Q12 (Yang--Mills from $a_4$, admissible principal bundle),
   Q6a (gauge-structure sub-programme), Q11 (Lorentzian form only for a supplied extension; no coefficient value)
 - **Gauge group**: $G_\Pi$ is a supplied compact group, not identified by the gauge-structure
