@@ -9,7 +9,7 @@ J. Beau, Independent Researcher, France
 
 On a supplied Riemannian metric, the companion Gravity paper states the conditions under which the projective
 spectral entropy functional $S_\Pi[g, \mathcal{A}] = \tfrac{1}{2}\log\det' A_{g,\mathcal{A}}$ has the Einstein
-tensor as its dominant horizontal $a_2$ response (a non-zero matched Einstein coefficient and small curvature
+tensor as its locally dominant horizontal $a_2$ response (a non-zero matched Einstein coefficient and small curvature
 relative to the renormalized higher-derivative scale), and the companion Q12 paper derives the local Yang--Mills
 equations as the vertical $a_4$ response of the same functional.
 
